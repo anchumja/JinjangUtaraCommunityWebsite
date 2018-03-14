@@ -10,7 +10,7 @@
 <header>
 <div class="page-width">
 
-<a class="logo" href="index.html">&nbsp;</a>
+<a class="logo" href="index.php">&nbsp;</a>
 
 <nav>
 
@@ -90,7 +90,7 @@
 
     <p class="footer-company-about">
       <span>About the company</span>
-       AGN strives to better the lives of the people within Jinjang Utara Community
+       AGN strives to better the lives of the people within the Jinjang Utara Community
     </p>
 
     <div class="footer-icons">
