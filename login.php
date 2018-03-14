@@ -91,7 +91,7 @@
 
     <p class="footer-company-about">
       <span>About the company</span>
-      Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+       AGN strives to better the lives of the people within Jinjang Utara Community
     </p>
 
     <div class="footer-icons">
