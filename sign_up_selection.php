@@ -5,6 +5,15 @@
   <title>Jinjang Utara Community Page</title>
   <script src="assets/jquery3.js"></script>
   <script src="assets/scripts.js"></script>
+
+  <!--Bootstrap-->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet"  href="css/bootstrap-social.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
 </head>
 
 <header>
@@ -31,8 +40,29 @@
 </header>
 
 <body>
+  <div class="box col-xs-10 col-xs-offset-1 ">
 
+          		<a href="homepage.php" class="arrow"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+          		<h1>Create An Acount</h1>
 
+          	<hr>
+
+          	<div class="midBox">
+          		<a href="resident_signUpForm.php" class="btn btn-primary btn-lg">Resident</a>
+          		<br/>
+          		<br/>
+          		<a href="client_signUpForm.php" class="btn btn-primary btn-lg">Client</a>
+          		<!--<a class="btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
+          		<i class="fa fa-address-book-o" aria-hidden="true"></i>-->
+          	</div>
+
+          	<hr>
+
+          	<div class="lsBox pull-right">
+          		<h3>Already Signed Up? <a href="login.php" class="">Login here </a></h3>
+          	</div>
+          </div>
+</body>
 
 <footer class="footer-distributed">
 
@@ -92,5 +122,5 @@
 
 </footer>
 
-</body>
+
 </html>

@@ -8,6 +8,7 @@ margin:0px;
 padding: 0px;
 font-family: 'Lato', Arial, sans-serif;
 }
+
 header{
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+54,0.39+100 */
 background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 54%, rgba(255,255,255,0.39) 100%); /* FF3.6-15 */
@@ -32,232 +33,151 @@ height: 20px;
 top: 100px;
 position: absolute;
 }
-
-html, body {
-    padding:0;
-    margin:0;
+.error-message {
+	padding: 7px 10px;
+	background: #fff1f2;
+	border: #ffd5da 1px solid;
+	color: #d6001c;
+	border-radius: 4px;
 }
-.error {
-    color: #990000;
-}
-.navbar{
-	height: 50%;
-	width: 100%;
-	z-index: 1;
-}
-#img_logo_trainer{
-	position: absolute;
-  width:30%;
-  height:40%;
-  left:37%;
-	top:12%;
-}
-.box{
-	position: fixed;
-	top:190px;
-	left: 25%;
-	background-color: white;
-	border: 2px solid black;
-	border-radius: 5px;
-	width: 40%;
-	z-index: 99;
-}
-.arrow {
-color: #333;
-text-decoration: none;
-font-size: 150%;
-}
-.glyphicon-arrow-left{
-	top: 20px;
-	left:20px;
-}
-.box h1{
-	text-align: center;
-}
-.midBox{
-	text-align: center;
-	font-size: 20px;
-
-}
-.form-group select{
-	color:#b8b9ba;
-}
-.form-control::placeholder{
-	color: #b8b9ba;
-}
-.midBox a{
-	width: 50%;
-	height: 55%;
-	font-size: 20px;
-	padding-top: 2%;
-	padding-bottom: 2%;
-}
-.lsBox h3{
-	font-size: 1.5vmax;
-}
-.glyphicon{
-	width: 2%;
-}
-.check{
-	left: 25px;
-	font-size: 1.5vmax;
-}
-.forgotpass{
-	left: 2%;
-}
-.forgotpass a{
-	font-size: 1.5vmax;
-}
-.form-group .input-lg::placeholder{
-	font-size: 1.4vmax;
+.success-message {
+	padding: 7px 10px;
+	background: #cae0c4;
+	border: #c3d0b5 1px solid;
+	color: #027506;
+	border-radius: 4px;
 }
 
-/*Custom screen size to make the css responsive manually*/
-/*Custom screen size to make the css responsive manually*/
-@media screen  and (max-width: 1024px) and (min-height: 1439px) and (max-height: 1440px){
-	.box{
-		top:400px;
-    width:500px;
-		height:500px;
-		padding: 50px;
-		margin-left: -1px;
-	}
-	.arrow {
-
-	font-size: 230%;
-	}
-	.glyphicon-arrow-left{
-		top: 0px;
-
-	}
-	.midBox a{
-		padding-top: 3%;
-		padding-bottom: 5%;
-	}
-
+.demo-table {
+  position: static;
+  z-index: 1;
+  background: #d9eeff;
+  width: 50%;
+  border-spacing: initial;
+  text-align: center;
+  word-break: break-word;
+  line-height: 1.8em;
+  color: #333;
+  border-radius: 4px;
+  padding: 20px 40px;
 }
-@media screen and (min-height: 1439px) and (max-height: 1440px){
-	.box{
-		top:380px;
-	}
+.demo-table td {
+	padding: 15px 0px;
 }
-@media screen and (min-height: 1365px) and (max-height: 1366px){
-	.box{
-		top:370px;
-	}
+.demoInputBox {
+	padding: 10px 30px;
+	border: #a9a9a9 1px solid;
+	border-radius: 4px;
+}
+.btnRegister {
+	padding: 10px 30px;
+	background-color: #3367b2;
+	border: 0;
+	color: #FFF;
+	cursor: pointer;
+	border-radius: 4px;
+	margin-left: 10px;
 }
 
-@media screen and (min-height: 1279px) and (max-height: 1280px){
-	.box{
-		top:350px;
-	}
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
 }
-@media screen and (min-height: 1080px) and (max-height: 1100px){
-	.box{
-		top:290px;
-	}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-@media screen and (min-height: 1024px) and (max-height: 1079px){
-	.box{
-		top:280px;
-	}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
-@media screen and (min-height: 1001px) and (max-height: 1023px){
-	.box{
-		top:270px;
-	}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
 }
 
-@media screen and (min-height: 951px) and (max-height: 1000px){
-	.box{
-		top:260px;
-	}
+*{
+transition: all 0.5s ease-in-out;
 }
-@media screen and (min-height: 921px) and (max-height: 950px){
-	.box{
-		top:250px;
-	}
+body{
+background: #fff;
+margin:0px;
+padding: 0px;
+font-family: 'Lato', Arial, sans-serif;
 }
-@media screen and (min-height: 891px) and (max-height: 920px){
-	.box{
-		top:240px;
-	}
-}
-@media screen and (min-height: 851px) and (max-height: 890px){
-	.box{
-		top:230px;
-	}
-}
-@media screen and (min-height: 812px) and (max-height: 850px){
-	.box{
-		top:215px;
-	}
-}
-@media screen and (max-width: 767px) {
-	#img_logo_trainer{
-		width:40%;
-	  height:34%;
-		top:18%;
-		left:32%;
-	}
-	.box{
 
-		left:22%;
-		width: 45%;
-		z-index: 99;
-	}
-}
-@media screen and (max-width: 625px) {
-	#img_logo_trainer{
-	  position: absolute;
-	  width:35%;
-	  height:30%;
-		left:35%;
-	}
-	.box{
-		left:20%;
-		width: 50%;
-	}
-}
-@media screen and (max-width: 563px) {
-	.box{
-		left:15%;
-		width: 60%;
-	}
-}
-@media screen and (max-width: 469px) {
-	.box{
-		left:12%;
-		width: 65%;
-	}
-}
-@media screen and (max-width: 433px) {
-	.box{
-		left:8%;
-		width: 70%;
-	}
-}
-@media screen and (max-width: 433px) {
-	.forgotpass{
-		margin-top:-3%;
-	}
-	.forgotpass a{
-		font-size: 1.4vmax;
-	}
-}
-@media screen and (max-width: 402px) {
-	#img_logo_trainer{
-		position: absolute;
-		width:45%;
-		height:34%;
-		top:18%;
-		left:28%;
-	}
-	.glyphicon-arrow-left{
-		top: 15px;
-		left:10px;
-	}
-}
 .footer-distributed{
 	background-color: #292c2f;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
