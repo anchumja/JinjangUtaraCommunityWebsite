@@ -10,7 +10,7 @@
 <header>
 <div class="page-width">
 
-<a class="logo" href="index.php">&nbsp;</a>
+<a class="logo" href="index.html">&nbsp;</a>
 
 <nav>
 
@@ -21,31 +21,17 @@
 
 <ul class="menubtns">
 <li class="selected"><a href="index.php">Home</a></li>
-<li><a href="job.html">Job</a></li>
-<li><a href="news.html">News</a></li>
+<li><a href="login.php">Log In</a></li>
+<li><a href="job.php">Job</a></li>
+<li><a href="news.php">News</a></li>
 <li><a href="donate.php">Donate</a></li>
-<li><a href="aboutus.html">About Us</a></li>
-<li><a href="contact.html">Contact us</a></li>
+<li><a href="volunteer.php">Volunteer</a></li>
+<li><a href="contact.php">Contact us</a></li>
 </ul>
 </header>
+
 <body>
-<div class="login-page">
-  <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
-      <p class="message">Not registered? <a href="register.php">Create an account</a></p>
-    </form>
-  </div>
-</div>
+
 
 
 <footer class="footer-distributed">
@@ -90,7 +76,7 @@
 
     <p class="footer-company-about">
       <span>About the company</span>
-       AGN strives to better the lives of the people within the Jinjang Utara Community
+       AGN strives to better the lives of the people within Jinjang Utara Community
     </p>
 
     <div class="footer-icons">

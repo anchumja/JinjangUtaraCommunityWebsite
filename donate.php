@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/donate.css" />
   <title>Jinjang Utara Community Page</title>
   <script src="assets/jquery3.js"></script>
   <script src="assets/scripts.js"></script>
@@ -21,11 +21,11 @@
 
 <ul class="menubtns">
 <li class="selected"><a href="index.php">Home</a></li>
-<li><a href="job.html">Job</a></li>
-<li><a href="news.html">News</a></li>
+<li><a href="job.php">Job</a></li>
+<li><a href="news.php">News</a></li>
 <li><a href="donate.php">Donate</a></li>
-<li><a href="aboutus.html">About Us</a></li>
-<li><a href="contact.html">Contact us</a></li>
+<li><a href="volunteer.php">Volunteer</a></li>
+<li><a href="contact.php">Contact us</a></li>
 </ul>
 </header>
 

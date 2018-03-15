@@ -1,0 +1,401 @@
+@import 'https://fonts.googleapis.com/css?family=Lato';
+*{
+transition: all 0.5s ease-in-out;
+}
+body{
+background: #fff;
+margin:0px;
+padding: 0px;
+font-family: 'Lato', Arial, sans-serif;
+}
+
+header{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+54,0.39+100 */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 54%, rgba(255,255,255,0.39) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 54%,rgba(255,255,255,0.39) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 54%,rgba(255,255,255,0.39) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+color: #000;
+height: 100px;
+position: fixed;
+top:0px;
+right:0px;
+left: 0px;
+z-index:1;
+}
+
+header:after {
+border-top: 1px solid rgba(0,0,0,0.1);
+content: " ";
+display: block;
+width: 100%;
+background: url('layout/header-shadow.png') no-repeat center center;
+height: 20px;
+top: 100px;
+position: absolute;
+}
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+
+*{
+transition: all 0.5s ease-in-out;
+}
+body{
+background: #fff;
+margin:0px;
+padding: 0px;
+font-family: 'Lato', Arial, sans-serif;
+}
+
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+
+	padding: 55px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font-family: "Roboto", sans-serif;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+.page-width{
+width: 100%;
+max-width: 1300px;
+margin: auto;
+position: relative;
+
+}
+
+
+.container{
+margin-top: 55px;
+min-height: 500px;
+}
+
+.container_texts{
+padding-top: 45px;
+}
+
+.logo{
+text-decoration: none;
+height: 100px;
+width: 25%;
+background: url('layout/acts.jpg') center center no-repeat;
+background-size: contain;
+display: block;
+float: left;
+}
+
+nav{
+width: 75%;
+float: right;
+height: 100px;
+}
+
+.pull-left{
+float: left;
+}
+
+.pull-right{
+float: right;
+}
+
+.nonestyle{
+font-size: inherit;
+transition: none;
+background-color: transparent;
+}
+
+nav ul {
+float: right;
+list-style-type: none;
+margin:0px;
+padding:0px;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+nav ul li {
+float: left;
+}
+
+nav ul li a{
+padding: 39px 10px;
+text-decoration: none;
+display: block;
+color: #999;
+border-bottom: 4px solid transparent;
+}
+
+nav ul li a:hover ,nav ul li.selected a{
+border-bottom: 4px solid #FCDB48;
+background: rgba(255,255,255,0.5);
+}
+
+
+.mobilemenu{
+display: block !important;
+position: absolute;
+left: 25px;
+right: 25px;
+top: 102px;
+max-width: 350px;
+margin: auto;
+
+}
+.mobilemenu li {
+width: 100%;
+}
+.mobilemenu li a{
+background: rgba(255,255,255,0.85);
+padding: 10px;
+text-align: center;
+border-bottom: 4px solid rgba(255,255,255,0.2);
+}
+.mobilemenu li a:hover{
+background: rgba(255,255,255,1);
+}
