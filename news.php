@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="assets/login.css" />
+  <link rel="stylesheet" href="assets/style.css" />
   <title>Jinjang Utara Community Page</title>
   <script src="assets/jquery3.js"></script>
   <script src="assets/scripts.js"></script>
@@ -21,9 +21,9 @@
 
 <ul class="menubtns">
 <li><a href="index.php">Home</a></li>
-<li class="selected"><a href="login.php">Log In</a></li>
+<li><a href="login.php">Log In</a></li>
 <li><a href="job.php">Job</a></li>
-<li><a href="news.php">News</a></li>
+<li class="selected"><a href="news.php">News</a></li>
 <li><a href="donate.php">Donate</a></li>
 <li><a href="volunteer.php">Volunteer</a></li>
 <li><a href="contact.php">Contact us</a></li>
@@ -31,27 +31,9 @@
 </header>
 
 <body>
-<div class="login-page">
-  <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="full name"/>
-      <input type="text" placeholder="email"/>
-      <input type="text" placeholder="address"/>
 
-      <button>Register</button><span>
-  
-    </form>
-  </div>
-</div>
+
+
 
 
 <footer class="footer-distributed">

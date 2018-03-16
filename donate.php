@@ -20,10 +20,10 @@
 
 
 <ul class="menubtns">
-<li class="selected"><a href="index.php">Home</a></li>
+<li><a href="index.php">Home</a></li>
 <li><a href="job.php">Job</a></li>
 <li><a href="news.php">News</a></li>
-<li><a href="donate.php">Donate</a></li>
+<li class="selected"><a href="donate.php">Donate</a></li>
 <li><a href="volunteer.php">Volunteer</a></li>
 <li><a href="contact.php">Contact us</a></li>
 </ul>
