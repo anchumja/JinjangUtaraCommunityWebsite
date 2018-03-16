@@ -42,13 +42,13 @@
 </header>
 
 <div class="container loginpage">
-	
+
 
 
 <div class="page-width">
 
 <div class="memberform">
-	
+
 	<form action="" method="POST" class="registerform">
 		<h2>New Job Form</h2>
 		<div class="formelement">
@@ -86,7 +86,7 @@
 		</div>
 		<div class="clear"></div>
 	</form>
-	
+
 
 
 </div>
