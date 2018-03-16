@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/contact.css" />
   <title>Jinjang Utara Community Page</title>
   <script src="assets/jquery3.js"></script>
   <script src="assets/scripts.js"></script>
@@ -16,9 +16,6 @@
 
 <div class="menubutton"></div>
 
-
-
-
 <ul class="menubtns">
 <li class="selected"><a href="index.php">Home</a></li>
 <li><a href="login.php">Log In</a></li>
@@ -30,9 +27,24 @@
 </ul>
 </header>
 
-<body>
+<section id="contact">
 
-  
+<div class="container">
+
+<form name="htmlform" method="post" action="toyousender.php">
+
+<input type="text" name="first_name" placeholder="NAME" required>
+
+<input  type="email" name="email" placeholder="MAIL" required>
+
+<textarea name="comments" placeholder="MESSAGE" required ></textarea>
+
+<button name="send" type="submit" class="submit">SEND</button>
+
+</form>
+
+  </div>
+  </section>
 
 
 

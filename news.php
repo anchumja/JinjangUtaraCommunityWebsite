@@ -5,6 +5,7 @@
   <title>Jinjang Utara Community Page</title>
   <script src="assets/jquery3.js"></script>
   <script src="assets/scripts.js"></script>
+  <meta charset="utf-8">
 </head>
 
 <header>
@@ -15,10 +16,6 @@
 <nav>
 
 <div class="menubutton"></div>
-
-
-
-
 <ul class="menubtns">
 <li><a href="index.php">Home</a></li>
 <li><a href="login.php">Log In</a></li>
@@ -31,6 +28,7 @@
 </header>
 
 <body>
+
 
 
 
