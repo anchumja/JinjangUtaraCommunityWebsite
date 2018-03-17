@@ -22,7 +22,7 @@
 <ul class="menubtns">
 <li><a href="index.php">Home</a></li>
 <li class="selected"><a href="login.php">Log In</a></li>
-<li><a href="job.php">Job</a></li>
+<li><a href="newjob.php">Job</a></li>
 <li><a href="news.php">News</a></li>
 <li><a href="donate.php">Donate</a></li>
 <li><a href="volunteer.php">Volunteer</a></li>

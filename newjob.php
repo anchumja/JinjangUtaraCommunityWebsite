@@ -98,24 +98,63 @@
 </div>
 
 
-<div class="footer-placeholder">&nbsp;</div>
-<footer>
-<div class="page-width">
-<div class="one-third"><p><b>BARB Online Properties Agency</b><br> has been rated 5 star in the WOW<br>We are famous in Responsibility and Fast Response.</p></div>
-<div class="two-third">
-	<ul>
-	<li><a href="index.html">Home</a></li>
-	<li class="selected"><a href="member.html">Members</a></li>
-	<li><a href="features.html">Features</a></li>
-	<li><a href="properties.html">Properties</a></li>
-	<li><a href="contact.html">Contact us</a></li>
-	</ul>
-</div>
-<div class="clear"></div>
-</div>
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+
+    <h3>Jinjang Utara Community Website</span></h3>
+
+    <p class="footer-links">
+      <a href="#">Blog</a>
+      ·
+      <a href="#">About</a>
+      ·
+      <a href="#">FAQ</a>
+      ·
+      <a href="#">Contact</a>
+    </p>
+
+    <p class="footer-company-name">AGN &copy; 2015</p>
+  </div>
+
+  <div class="footer-center">
+
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>Jinjang Utara</span> 52000, Kuala Lumpur</p>
+    </div>
+
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>03-2716 2000</p>
+    </div>
+
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@jucw.com">support@jucw.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-right">
+
+    <p class="footer-company-about">
+      <span>About the company</span>
+       AGN strives to better the lives of the people within Jinjang Utara Community
+    </p>
+
+    <div class="footer-icons">
+
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-github"></i></a>
+
+    </div>
+
+  </div>
+
 </footer>
-
-
 
 </body>
 </html>
