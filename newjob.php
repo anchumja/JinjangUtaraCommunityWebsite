@@ -120,7 +120,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			<input type="number" min="1" id="workernumber" name="workernumber" value="" placeholder="" required />
 		</div>
 		<div class="formelement">
-			<label for="Salary">Salary (RM):</label>
+			<label for="Salary">Salary (RM per hour):</label>
 			<input type="number" min="1" id="salary" name="salary" value="" placeholder="<?php if(isset($salaryError)){echo $salaryError;} ?>" required />
 		</div>
 		<div class="formelement">
