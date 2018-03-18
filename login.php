@@ -1,7 +1,7 @@
 <?php
 include("connection.php");
 
-if(isset($_POST['submit']))
+if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 
  $username=$_POST['username'];
@@ -36,9 +36,10 @@ if(isset($_POST['submit']))
     header('location: index.php');
     } 
     else {
-    echo '<div class="alert alert-danger">
-    <strong>Oops!</strong> You entered incorrect username or password. Please try again.
-    </div>';
+    echo '<script language="javascript">';
+    echo 'alert("Wrong Username or Password");';
+    echo 'window.location.href="Login.php";';
+    echo '</script>';;
     }
  }
  else { echo'Enter both username and password'; }
@@ -50,6 +51,7 @@ if(isset($_POST['submit']))
 <head>
   <link rel="stylesheet" href="assets/login.css" />
   <title>Jinjang Utara Community Page</title>
+  <link rel="stylesheet" href="assets/style.css" />
   <script src="assets/jquery3.js"></script>
   <script src="assets/scripts.js"></script>
 </head>
@@ -83,10 +85,10 @@ if(isset($_POST['submit']))
 <br>
 <div class="login-page">
   <div class="form">
-    <form action="login.php" class="login-form" method="POST">
-      <input type="text" name="username" value="" placeholder="username" required>
-      <input type="password" name="password" value="" placeholder="password" required>
-      <button>login</button>
+    <form name="loginform" action="login.php" class="login-form" method="POST">
+      <input type="text" name="username" id="username" placeholder="username" required>
+      <input type="password" name="password" id="password" placeholder="password" required>
+      <input type="submit" name="login-user" value="Login" class="btnRegister">
       <p class="message">Not registered? <a href="signup.php">Create an account</a></p>
     </form>
   </div>

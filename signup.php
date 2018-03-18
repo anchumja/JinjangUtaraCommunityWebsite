@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $findnonresident = "SELECT `username` FROM `nonresident` WHERE `username` = '".$_POST['username']."'";
     $findnonresidentUsername = mysqli_query($con, $findnonresident);
     if(mysqli_num_rows($findResidentUsername) > 0 || mysqli_num_rows($findnonresidentUsername) > 0){
-      $emailError = "Someone have used this username already";
+      $usernameError = "Someone have used this username already";
     }   
     else {
     $username = $_POST['username'];
