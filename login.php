@@ -54,6 +54,9 @@ if(isset($_POST['submit']))
   <script src="assets/scripts.js"></script>
 </head>
 
+
+
+<body>
 <header>
 <div class="page-width">
 
@@ -69,23 +72,15 @@ if(isset($_POST['submit']))
 <ul class="menubtns">
 <li><a href="index.php">Home</a></li>
 <li class="selected"><a href="login.php">Log In</a></li>
-<<<<<<< HEAD
-<li><a href="job.php">Job</a></li>
-=======
-<<<<<<< HEAD
 <li><a href="joblist.php">Job</a></li>
-=======
 <li><a href="newjob.php">Job</a></li>
->>>>>>> origin/master
->>>>>>> 3a8dc1b5cdfa2ebf7d2e8571088609e3eaddadee
 <li><a href="news.php">News</a></li>
 <li><a href="donate.php">Donate</a></li>
 <li><a href="volunteer.php">Volunteer</a></li>
 <li><a href="contact.php">Contact us</a></li>
 </ul>
 </header>
-
-<body>
+<br>
 <div class="login-page">
   <div class="form">
     <form action="login.php" class="login-form" method="POST">

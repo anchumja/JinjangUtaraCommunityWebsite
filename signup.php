@@ -75,10 +75,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <head>
   <link rel="stylesheet" href="assets/signup.css" />
   <title>Jinjang Utara Community Page</title>
+  <link rel="stylesheet" href="assets/style.css" />
   <script src="assets/jquery3.js"></script>
   <script src="assets/scripts.js"></script>
 </head>
 
+
+
+<body>
 <header>
 <div class="page-width">
 
@@ -94,11 +98,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <ul class="menubtns">
 <li><a href="index.php">Home</a></li>
 <li class="selected"><a href="login.php">Log In</a></li>
-<<<<<<< HEAD
 <li><a href="joblist.php">Job</a></li>
-=======
 <li><a href="newjob.php">Job</a></li>
->>>>>>> origin/master
 <li><a href="news.php">News</a></li>
 <li><a href="donate.php">Donate</a></li>
 <li><a href="volunteer.php">Volunteer</a></li>
@@ -106,7 +107,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 </ul>
 </header>
 
-<body>
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br><br>
   <form name="frmRegistration" method="post" action="signup.php">
   	<table border="0" width="500" align="center" class="demo-table">
   		<?php if(!empty($success_message)) { ?>
@@ -121,7 +131,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   		</tr>
   		<tr>
   			<td>Full Name</td>
-  			<td><input type="text" class="demoInputBox" name="fullname" id="fullname" placeholder="" required></td>
+  			<td><input type="text" class="demoInputBox" name="fullname" id="fullname" placeholder="Enter your fullname" required></td>
   		</tr>
   		<tr>
   			<td>Password</td>
@@ -153,6 +163,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   		</tr>
   	</table>
   </form>
+
+
+
 
 
 <footer class="footer-distributed">
