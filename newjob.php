@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $jobduration = $_POST['jobduration']; 
     $jobdescription = $_POST['jobdescription'];
     $contactinfo = $_POST['contactinfo'];    
-	$starttime = $_POST['startime'];
+	$startime = $_POST['startime'];
 	$endtime = $_POST['endtime'];
 	$jobID = intval( rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
 
@@ -17,8 +17,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$salaryError=""; 
 
 	if(!empty($_POST['workernumber'])){
-		if($_POST['workernumber'] < 1){
-			$workernumberError = "Fee cannot be negative";
+		if($_POST['workernumber'] < 0){
+			$workernumberError = "Workers cannot be negative";
 		} else {
 			if(is_numeric($_POST['workernumber'])){
 				$workernumber = $_POST['workernumber'];
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	if(!empty($_POST['salary'])){
 		if($_POST['salary'] < 0){
-			$salaryError = "Fee cannot be negative";
+			$salaryError = "Salary cannot be negative";
 		} else {
 			if(is_numeric($_POST['salary'])){
 				$salary = $_POST['salary'];
@@ -41,10 +41,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
 
 	if($workernumberError =="" && $salaryError ==""){
-		$newJob = "INSERT INTO `joblist` (`jobID`, `jobtitle`, `jobduration`, `jobdescription`, `startime`, `endtime`,`salary`, `contactinfo`, `status`,`maxWorker`, `employer`, `workers`) VALUES ('$jobID', '$jobtitle', '$jobduration' ,'$jobdescription', '$startime', '$endtime', '$salary', '$contactinfo', 'Available', '$workernumber', $fullname' , '0')";
+		$newJob = "INSERT INTO `joblist` (`jobID`, `jobtitle`, `jobduration`, `jobdescription`, `startime`, `endtime`,`salary`, `contactinfo`, `status`,`maxWorker`, `workers`) VALUES ('$jobID', '$jobtitle', '$jobduration' ,'$jobdescription', '$startime', '$endtime', '$salary', '$contactinfo', 'Available', '$workernumber' , '0')";
 		if (mysqli_query($con, $newJob)){	
 			echo '<script language="javascript">';
-			echo 'alert("Session successfully created")';
+			echo 'alert("Job successfully created")';
 			echo '</script>';
 			}
 		}

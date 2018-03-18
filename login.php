@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $_SESSION['email']=$resource['email'];
     $_SESSION['password']=$resource['password'];
     $_SESSION['role']='resident';
-    header('location: index.php');
+    header('location: index_resident.php');
     } 
     else if (mysqli_num_rows($findnonResidentUsrnamePass) > 0){
     $resource=mysqli_fetch_array($findnonResidentUsrnamePass);
@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $_SESSION['email']=$resource['email'];
     $_SESSION['password']=$resource['password'];
     $_SESSION['role']='nonresident';
-    header('location: index.php');
+    header('location: index_client.php');
     } 
     else {
     echo '<script language="javascript">';
@@ -73,12 +73,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <ul class="menubtns">
 <li><a href="index.php">Home</a></li>
+<li><a href="signup.php">Sign Up</a></li>
 <li class="selected"><a href="login.php">Log In</a></li>
-<li><a href="joblist.php">Job</a></li>
-<li><a href="newjob.php">Job</a></li>
-<li><a href="news.php">News</a></li>
 <li><a href="donate.php">Donate</a></li>
-<li><a href="volunteer.php">Volunteer</a></li>
 <li><a href="contact.php">Contact us</a></li>
 </ul>
 </header>
