@@ -1,3 +1,50 @@
+<?php
+include("connection.php");
+
+if(isset($_POST['submit']))
+{
+
+ $username=$_POST['username'];
+ $password=$_POST['password'];
+
+ $usernameError="";
+ $passwordError=""; 
+
+
+ if($username!=''&&$password!=''){
+   $findResident = "SELECT * FROM resident WHERE username='$username' and password='$password'";
+   $findResidentUsrnamePass = mysqli_query($con, $findResident);
+   $findnonResident = "SELECT * FROM nonresident WHERE username='$username' and password='$password'";
+   $findnonResidentUsrnamePass = mysqli_query($con, $findnonResident);
+
+   if (mysqli_num_rows($findResidentUsrnamePass) > 0){
+    $resource=mysqli_fetch_array($findResidentUsrnamePass);
+    $_SESSION['username']=$username;
+    $_SESSION['fullname']=$resource['fullname'];
+    $_SESSION['email']=$resource['email'];
+    $_SESSION['password']=$resource['password'];
+    $_SESSION['role']='resident';
+    header('location: index.php');
+    } 
+    else if (mysqli_num_rows($findnonResidentUsrnamePass) > 0){
+    $resource=mysqli_fetch_array($findnonResidentUsrnamePass);
+    $_SESSION['username']=$username;
+    $_SESSION['fullname']=$resource['fullname'];
+    $_SESSION['email']=$resource['email'];
+    $_SESSION['password']=$resource['password'];
+    $_SESSION['role']='nonresident';
+    header('location: index.php');
+    } 
+    else {
+    echo '<div class="alert alert-danger">
+    <strong>Oops!</strong> You entered incorrect username or password. Please try again.
+    </div>';
+    }
+ }
+ else { echo'Enter both username and password'; }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +69,11 @@
 <ul class="menubtns">
 <li><a href="index.php">Home</a></li>
 <li class="selected"><a href="login.php">Log In</a></li>
+<<<<<<< HEAD
+<li><a href="joblist.php">Job</a></li>
+=======
 <li><a href="newjob.php">Job</a></li>
+>>>>>>> origin/master
 <li><a href="news.php">News</a></li>
 <li><a href="donate.php">Donate</a></li>
 <li><a href="volunteer.php">Volunteer</a></li>
@@ -33,18 +84,11 @@
 <body>
 <div class="login-page">
   <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
+    <form action="login.php" class="login-form" method="POST">
+      <input type="text" name="username" value="" placeholder="username" required>
+      <input type="password" name="password" value="" placeholder="password" required>
       <button>login</button>
-      <p class="message">Not registered? <a href="register.php">Create an account</a></p>
+      <p class="message">Not registered? <a href="signup.php">Create an account</a></p>
     </form>
   </div>
 </div>

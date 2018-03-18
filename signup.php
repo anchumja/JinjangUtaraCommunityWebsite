@@ -1,3 +1,75 @@
+<?php 
+ include ("connection.php");
+ $usernameError="Enter your username"; 
+ $passwordError="Enter your Password"; 
+ $emailError="Enter your Email"; 
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $confirmPassword = $_POST['confirm_password'];
+    $username = $_POST['username'];
+    $fullname = $_POST["fullname"];
+    $password = $_POST['password'];
+    $userEmail = $_POST['userEmail'];
+    $gender = $_POST['gender'];
+    $role = $_POST['role'];
+
+    $emailError=""; 
+    $passwordError=""; 
+    $roleError = ""; 
+    $genderError="";
+    $usernameError="";
+
+      
+    $findResident = "SELECT `username` FROM `resident` WHERE `username` = '".$_POST['username']."'";
+    $findResidentUsername = mysqli_query($con, $findResident);
+    $findnonresident = "SELECT `username` FROM `nonresident` WHERE `username` = '".$_POST['username']."'";
+    $findnonresidentUsername = mysqli_query($con, $findnonresident);
+    if(mysqli_num_rows($findResidentUsername) > 0 || mysqli_num_rows($findnonresidentUsername) > 0){
+      $emailError = "Someone have used this username already";
+    }   
+    else {
+    $username = $_POST['username'];
+    }
+
+    $findResident = "SELECT `email` FROM `resident` WHERE `email` = '".$_POST['email']."'";
+    $findResidentEmail = mysqli_query($con, $findResident);
+    $findnonresident = "SELECT `email` FROM `nonresident` WHERE `email` = '".$_POST['email']."'";
+    $findnonresidentEmail = mysqli_query($con, $findnonresident);
+    if(mysqli_num_rows($findResidentEmail) > 0 || mysqli_num_rows($findnonresidentEmail) > 0){
+      $emailError = "Someone have used this email already";
+    }   
+    else {
+    $email = $_POST['email'];
+    }
+      
+    if($confirmPassword != $password){
+      $passwordError = "Both password must be same";
+    }
+
+    if($gender == ""){
+      $genderError = "Please select a gender";
+    }
+
+    if($role == ""){
+      $genderError = "Please select a role";
+    }
+
+    if($emailError == "" && $passwordError == "" &&  $roleError == ""  && $genderError == "" && $usernameError == ""){
+      if($role == "resident"){
+        $signUp = "INSERT INTO resident (`username`, `fullname`, `email`, `password`, `gender`, `role` ) VALUES ('$username', '$fullname', '$email', '$password', '$gender', '$role')";
+      } else if ($role == "nonresident"){
+        $signUp = "INSERT INTO nonresident (`username`, `fullname`, `email`, `password`, `gender`, `role`) VALUES ('$username', '$fullname', '$email', '$password', '$gender', '$role')";
+      }
+    mysqli_query($con, $signUp);
+    echo '<script language="javascript">';
+    echo 'alert("Thank for signing up");';
+    echo 'window.location.href="Login.php";';
+    echo '</script>';
+    }
+      
+}
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +94,11 @@
 <ul class="menubtns">
 <li><a href="index.php">Home</a></li>
 <li class="selected"><a href="login.php">Log In</a></li>
+<<<<<<< HEAD
+<li><a href="joblist.php">Job</a></li>
+=======
 <li><a href="newjob.php">Job</a></li>
+>>>>>>> origin/master
 <li><a href="news.php">News</a></li>
 <li><a href="donate.php">Donate</a></li>
 <li><a href="volunteer.php">Volunteer</a></li>
@@ -31,7 +107,7 @@
 </header>
 
 <body>
-  <form name="frmRegistration" method="post" action="">
+  <form name="frmRegistration" method="post" action="signup.php">
   	<table border="0" width="500" align="center" class="demo-table">
   		<?php if(!empty($success_message)) { ?>
   		<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
@@ -41,34 +117,36 @@
   		<?php } ?>
   		<tr>
   			<td>User Name</td>
-  			<td><input type="text" class="demoInputBox" name="userName" value="<?php if(isset($_POST['userName'])) echo $_POST['userName']; ?>"></td>
+  			<td><input type="text" class="demoInputBox" name="username" id="username" placeholder="<?php if(isset($usernameError)){echo $usernameError;} ?>" required></td>
   		</tr>
   		<tr>
-  			<td>First Name</td>
-  			<td><input type="text" class="demoInputBox" name="firstName" value="<?php if(isset($_POST['firstName'])) echo $_POST['firstName']; ?>"></td>
-  		</tr>
-  		<tr>
-  			<td>Last Name</td>
-  			<td><input type="text" class="demoInputBox" name="lastName" value="<?php if(isset($_POST['lastName'])) echo $_POST['lastName']; ?>"></td>
+  			<td>Full Name</td>
+  			<td><input type="text" class="demoInputBox" name="fullname" id="fullname" placeholder="" required></td>
   		</tr>
   		<tr>
   			<td>Password</td>
-  			<td><input type="password" class="demoInputBox" name="password" value=""></td>
+  			<td><input type="password" class="demoInputBox" name="password" id="password" placeholder="<?php if(isset($passwordError)){echo $passwordError;} ?>" required></td>
   		</tr>
   		<tr>
   			<td>Confirm Password</td>
-  			<td><input type="password" class="demoInputBox" name="confirm_password" value=""></td>
+  			<td><input type="password" class="demoInputBox" name="confirm_password" id="confirm_password" placeholder="Re-enter your password" required></td>
   		</tr>
   		<tr>
   			<td>Email</td>
-  			<td><input type="text" class="demoInputBox" name="userEmail" value="<?php if(isset($_POST['userEmail'])) echo $_POST['userEmail']; ?>"></td>
+  			<td><input type="text" class="demoInputBox" name="email" id="email" placeholder="<?php if(isset($emailError)){echo $emailError;} ?>" required></td>
   		</tr>
   		<tr>
   			<td>Gender</td>
-  			<td><input type="radio" name="gender" value="Male" <?php if(isset($_POST['gender']) && $_POST['gender']=="Male") { ?>checked<?php  } ?>> Male
-  			<input type="radio" name="gender" value="Female" <?php if(isset($_POST['gender']) && $_POST['gender']=="Female") { ?>checked<?php  } ?>> Female
+  			<td><input type="radio" name="gender" id="gender" value="Male"> Male
+  			<input type="radio" name="gender" id="gender" value="Female"> Female
   			</td>
   		</tr>
+      <tr>
+        <td>Are you a resident of Jinjang Utara?</td>
+        <td><input type="radio" name="role" id="role" value="resident"> Yes
+        <input type="radio" name="role" id="role" value="nonresident"> No
+        </td>
+      </tr>
   		<tr>
   			<td colspan=2>
   			<input type="checkbox" name="terms"> I accept Terms and Conditions <input type="submit" name="register-user" value="Register" class="btnRegister"></td>

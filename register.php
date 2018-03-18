@@ -43,12 +43,15 @@
     <form class="login-form">
       <input type="text" placeholder="username"/>
       <input type="password" placeholder="password"/>
-      <input type="text" placeholder="full name"/>
       <input type="text" placeholder="email"/>
-      <input type="text" placeholder="address"/>
 
+<<<<<<< HEAD
+      <button>Register</button>
+      
+=======
       <button>Register</button><span>
 
+>>>>>>> origin/master
     </form>
   </div>
 </div>
