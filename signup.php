@@ -1,8 +1,8 @@
-<?php 
+<?php
  include ("connection.php");
- $usernameError="Enter your username"; 
- $passwordError="Enter your Password"; 
- $emailError="Enter your Email"; 
+ $usernameError="Enter your username";
+ $passwordError="Enter your Password";
+ $emailError="Enter your Email";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $confirmPassword = $_POST['confirm_password'];
@@ -13,20 +13,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $gender = $_POST['gender'];
     $role = $_POST['role'];
 
-    $emailError=""; 
-    $passwordError=""; 
-    $roleError = ""; 
+    $emailError="";
+    $passwordError="";
+    $roleError = "";
     $genderError="";
     $usernameError="";
 
-      
+
     $findResident = "SELECT `username` FROM `resident` WHERE `username` = '".$_POST['username']."'";
     $findResidentUsername = mysqli_query($con, $findResident);
     $findnonresident = "SELECT `username` FROM `nonresident` WHERE `username` = '".$_POST['username']."'";
     $findnonresidentUsername = mysqli_query($con, $findnonresident);
     if(mysqli_num_rows($findResidentUsername) > 0 || mysqli_num_rows($findnonresidentUsername) > 0){
       $usernameError = "Someone have used this username already";
-    }   
+    }
     else {
     $username = $_POST['username'];
     }
@@ -37,11 +37,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $findnonresidentEmail = mysqli_query($con, $findnonresident);
     if(mysqli_num_rows($findResidentEmail) > 0 || mysqli_num_rows($findnonresidentEmail) > 0){
       $emailError = "Someone have used this email already";
-    }   
+    }
     else {
     $email = $_POST['email'];
     }
-      
+
     if($confirmPassword != $password){
       $passwordError = "Both password must be same";
     }
@@ -62,13 +62,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       }
     mysqli_query($con, $signUp);
     echo '<script language="javascript">';
-    echo 'alert("Thank for signing up");';
+    echo 'alert("Signed Up Successfully!");';
     echo 'window.location.href="Login.php";';
     echo '</script>';
     }
-      
+
 }
-  
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
