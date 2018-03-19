@@ -21,6 +21,7 @@
 
 <ul class="menubtns">
 <li class="selected"><a href="index.php">Home</a></li>
+<li><a href="signup.php">Sign Up</a></li>
 <li><a href="login.php">Log In</a></li>
 <li><a href="newjob.php">Job</a></li>
 <li><a href="news.php">News</a></li>
