@@ -11,7 +11,7 @@
 <header>
 <div class="page-width">
 
-<a class="logo" href="index.html">&nbsp;</a>
+<a class="logo" href="index.php">&nbsp;</a>
 
 <nav>
 

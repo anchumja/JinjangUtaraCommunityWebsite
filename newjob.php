@@ -1,4 +1,4 @@
-<?php 
+<?php
 include ("connection.php");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -6,15 +6,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$fullname=$_SESSION['fullname'];
 
     $jobtitle = $_POST['jobtitle'];
-    $jobduration = $_POST['jobduration']; 
+    $jobduration = $_POST['jobduration'];
     $jobdescription = $_POST['jobdescription'];
-    $contactinfo = $_POST['contactinfo'];    
+    $contactinfo = $_POST['contactinfo'];
 	$startime = $_POST['startime'];
 	$endtime = $_POST['endtime'];
 	$jobID = intval( rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
 
-	$workernumberError=""; 
-	$salaryError=""; 
+	$workernumberError="";
+	$salaryError="";
 
 	if(!empty($_POST['workernumber'])){
 		if($_POST['workernumber'] < 0){
@@ -42,14 +42,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	if($workernumberError =="" && $salaryError ==""){
 		$newJob = "INSERT INTO `joblist` (`jobID`, `jobtitle`, `jobduration`, `jobdescription`, `startime`, `endtime`,`salary`, `contactinfo`, `status`,`maxWorker`, `workers`) VALUES ('$jobID', '$jobtitle', '$jobduration' ,'$jobdescription', '$startime', '$endtime', '$salary', '$contactinfo', 'Available', '$workernumber' , '0')";
-		if (mysqli_query($con, $newJob)){	
+		if (mysqli_query($con, $newJob)){
 			echo '<script language="javascript">';
 			echo 'alert("Job successfully created")';
 			echo '</script>';
 			}
 		}
     }
-  
+
 ?>
 
 <!DOCTYPE HTML>
@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <header>
 <div class="page-width">
 
-<a class="logo" href="index.html">&nbsp;</a>
+<a class="logo" href="index.php">&nbsp;</a>
 
 <nav>
 
@@ -88,13 +88,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 </header>
 
 <div class="container">
-	
+
 <br><br><br><br>
 
 <div class="page-width">
 
 <div class="memberform">
-	
+
 	<form action="newjob.php" method="POST" class="registerform">
 		<h2>New Job Form</h2>
 		<div class="formelement">
@@ -132,7 +132,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		</div>
 		<div class="clear"></div>
 	</form>
-	
+
 
 
 </div>
@@ -204,25 +204,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 </footer>
 
-
-    <div>
-      <i class="fa fa-phone"></i>
-      <p>03-2716 2000</p>
-    </div>
-
-    <div>
-      <i class="fa fa-envelope"></i>
-      <p><a href="mailto:support@jucw.com">support@jucw.com</a></p>
-    </div>
-
-  </div>
-
-  <div class="footer-right">
-
-    <p class="footer-company-about">
-      <span>About the company</span>
-       AGN strives to better the lives of the people within Jinjang Utara Community
-    </p>
 
     <div class="footer-icons">
 

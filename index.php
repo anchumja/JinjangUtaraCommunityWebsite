@@ -10,7 +10,7 @@
 <header>
 <div class="page-width">
 
-<a class="logo" href="index.html">&nbsp;</a>
+<a class="logo" href="index.php">&nbsp;</a>
 
 <nav>
 
@@ -24,7 +24,6 @@
 <li><a href="signup.php">Sign Up</a></li>
 <li><a href="login.php">Log In</a></li>
 <li><a href="newjob.php">Job</a></li>
-<li><a href="news.php">News</a></li>
 <li><a href="donate.php">Donate</a></li>
 <li><a href="volunteer.php">Volunteer</a></li>
 <li><a href="contact.php">Contact us</a></li>

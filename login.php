@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
  $password=$_POST['password'];
 
  $usernameError="";
- $passwordError=""; 
+ $passwordError="";
 
 
  if($username!=''&&$password!=''){
@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $_SESSION['password']=$resource['password'];
     $_SESSION['role']='resident';
     header('location: index_resident.php');
-    } 
+    }
     else if (mysqli_num_rows($findnonResidentUsrnamePass) > 0){
     $resource=mysqli_fetch_array($findnonResidentUsrnamePass);
     $_SESSION['username']=$username;
@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $_SESSION['password']=$resource['password'];
     $_SESSION['role']='nonresident';
     header('location: index_client.php');
-    } 
+    }
     else {
     echo '<script language="javascript">';
     echo 'alert("Wrong Username or Password");';
@@ -62,7 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 <header>
 <div class="page-width">
 
-<a class="logo" href="index.html">&nbsp;</a>
+<a class="logo" href="index.php">&nbsp;</a>
 
 <nav>
 

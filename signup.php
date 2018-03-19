@@ -86,7 +86,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <header>
 <div class="page-width">
 
-<a class="logo" href="index.html">&nbsp;</a>
+<a class="logo" href="index.php">&nbsp;</a>
 
 <nav>
 
@@ -96,10 +96,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 <ul class="menubtns">
-<li><a href="index.php">Home</a></li>
-<li class="selected"><a href="signup.php">Sign Up</a></li>
+<li class="selected"><a href="index.php">Home</a></li>
+<li><a href="signup.php">Sign Up</a></li>
 <li><a href="login.php">Log In</a></li>
+<li><a href="newjob.php">Job</a></li>
 <li><a href="donate.php">Donate</a></li>
+<li><a href="volunteer.php">Volunteer</a></li>
 <li><a href="contact.php">Contact us</a></li>
 </ul>
 </header>
