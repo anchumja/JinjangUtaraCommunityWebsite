@@ -51,8 +51,8 @@ position: absolute;
 .demo-table {
   position: static;
   z-index: 1;
-  background: #d9eeff;
-  width: 50%;
+  background: #f4e1d2;
+  width: 30%;
   border-spacing: initial;
   text-align: center;
   word-break: break-word;
@@ -60,6 +60,7 @@ position: absolute;
   color: #333;
   border-radius: 4px;
   padding: 20px 40px;
+	box-shadow:0px 0px 10px rgba(0,0,0,0.5), 0px 0px 10px rgba(0,0,0,0.2) inset;
 }
 .demo-table td {
 	padding: 15px 0px;
@@ -79,7 +80,7 @@ position: absolute;
 	margin-left: 10px;
 }
 
-.login-page {
+.signup-page {
   width: 360px;
   padding: 8% 0 0;
   margin: auto;

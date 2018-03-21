@@ -96,8 +96,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 <ul class="menubtns">
-<li class="selected"><a href="index.php">Home</a></li>
-<li><a href="signup.php">Sign Up</a></li>
+<li><a href="index.php">Home</a></li>
+<li class="selected"><a href="signup.php">Sign Up</a></li>
 <li><a href="login.php">Log In</a></li>
 <li><a href="newjob.php">Job</a></li>
 <li><a href="donate.php">Donate</a></li>
@@ -105,18 +105,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <li><a href="contact.php">Contact us</a></li>
 </ul>
 </header>
-
-
-
-
-
-
+<br>
 <br>
 <br>
 <br>
 <br>
 <br><br>
   <form name="frmRegistration" method="post" action="signup.php">
+    <h2><center>Sign Up</center></h2>
   	<table border="0" width="500" align="center" class="demo-table">
   		<?php if(!empty($success_message)) { ?>
   		<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
@@ -124,7 +120,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   		<?php if(!empty($error_message)) { ?>
   		<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
   		<?php } ?>
-  		<tr>
+      <tr>
   			<td>User Name</td>
   			<td><input type="text" class="demoInputBox" name="username" id="username" placeholder="<?php if(isset($usernameError)){echo $usernameError;} ?>" required></td>
   		</tr>
@@ -151,9 +147,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   			</td>
   		</tr>
       <tr>
-        <td>Are you a resident of Jinjang Utara?</td>
-        <td><input type="radio" name="role" id="role" value="resident"> Yes
-        <input type="radio" name="role" id="role" value="nonresident"> No
+        <td>Role</td>
+        <td><input type="radio" name="role" id="role" value="resident"> Resident
+        <input type="radio" name="role" id="role" value="nonresident"> Non Resident
         </td>
       </tr>
   		<tr>
@@ -162,6 +158,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   		</tr>
   	</table>
   </form>
+
 
 
 

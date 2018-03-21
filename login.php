@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     }
     else {
     echo '<script language="javascript">';
-    echo 'alert("Wrong Username or Password");';
+    echo 'alert("Wrong Username or Password!");';
     echo 'window.location.href="Login.php";';
     echo '</script>';;
     }
@@ -51,12 +51,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 <head>
   <link rel="stylesheet" href="assets/login.css" />
   <title>Jinjang Utara Community Page</title>
-  <link rel="stylesheet" href="assets/style.css" />
+
   <script src="assets/jquery3.js"></script>
   <script src="assets/scripts.js"></script>
 </head>
-
-
 
 <body>
 <header>
@@ -68,20 +66,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 <div class="menubutton"></div>
 
-
-
-
 <ul class="menubtns">
 <li><a href="index.php">Home</a></li>
 <li><a href="signup.php">Sign Up</a></li>
 <li class="selected"><a href="login.php">Log In</a></li>
+<li><a href="newjob.php">Job</a></li>
 <li><a href="donate.php">Donate</a></li>
+<li><a href="volunteer.php">Volunteer</a></li>
 <li><a href="contact.php">Contact us</a></li>
 </ul>
 </header>
 <br>
 <div class="login-page">
   <div class="form">
+    <h2><center>Login</center></h2>
     <form name="loginform" action="login.php" class="login-form" method="POST">
       <input type="text" name="username" id="username" placeholder="username" required>
       <input type="password" name="password" id="password" placeholder="password" required>
