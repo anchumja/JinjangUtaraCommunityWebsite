@@ -152,7 +152,7 @@ $(document).ready(function () {
 <li><a href="">Jobs Post History</a></li>
 <li><a href="donate_client.php">Donate</a></li>
 <li><a href="contact_client.php">Contact us</a></li>
-<li><a href="">Profile</a></li>
+<li><a href="profile_client.php">Profile</a></li>
 <li><a href="logout.php">Logout</a></li>
 </ul>
 </header>

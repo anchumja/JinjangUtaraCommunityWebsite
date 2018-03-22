@@ -6,30 +6,12 @@
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $confirmPassword = $_POST['confirm_password'];
-    $username = $_POST['username'];
-    $fullname = $_POST["fullname"];
     $password = $_POST['password'];
-    $email = $_POST['email'];
-    $gender = $_POST['gender'];
-    $role = $_POST['role'];
+
 
     $emailError=""; 
     $passwordError=""; 
-    $roleError = ""; 
-    $genderError="";
-    $usernameError="";
 
-      
-    $findResident = "SELECT `username` FROM `resident` WHERE `username` = '".$_POST['username']."'";
-    $findResidentUsername = mysqli_query($con, $findResident);
-    $findnonresident = "SELECT `username` FROM `nonresident` WHERE `username` = '".$_POST['username']."'";
-    $findnonresidentUsername = mysqli_query($con, $findnonresident);
-    if(mysqli_num_rows($findResidentUsername) > 0 || mysqli_num_rows($findnonresidentUsername) > 0){
-      $usernameError = "Someone have used this username already";
-    }   
-    else {
-    $username = $_POST['username'];
-    }
 
     $findResident = "SELECT `email` FROM `resident` WHERE `email` = '".$_POST['email']."'";
     $findResidentEmail = mysqli_query($con, $findResident);
@@ -46,20 +28,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $passwordError = "Both password must be same";
     }
 
-    if($gender == ""){
-      $genderError = "Please select a gender";
+    if($passwordError == "" && $emailError == "" ){
+      if
+    (mysqli_query($con, "UPDATE `resident` SET `password` = '$password', `email` = '$email' WHERE `username` = '".$username."'"));
+        {
+        echo '<script language="javascript">';
+        echo 'alert("Profile has been updated.")';
+        echo '</script>'; 
+        }     
     }
-
-    if($role == ""){
-      $genderError = "Please select a role";
-    }
-
-    if($emailError == "" && $passwordError == "" &&  $roleError == ""  && $genderError == "" && $usernameError == ""){
-      if($role == "resident"){
-        $signUp = "INSERT INTO resident (`username`, `fullname`, `email`, `password`, `gender`, `role` ) VALUES ('$username', '$fullname', '$email', '$password', '$gender', '$role')";
-      } else if ($role == "nonresident"){
-        $signUp = "INSERT INTO nonresident (`username`, `fullname`, `email`, `password`, `gender`, `role`) VALUES ('$username', '$fullname', '$email', '$password', '$gender', '$role')";
-      }
     mysqli_query($con, $signUp);
     echo '<script language="javascript">';
     echo 'alert("Thank for signing up");';
@@ -67,7 +44,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     echo '</script>';
     }
       
-}
   
 ?>
 <!DOCTYPE html>
@@ -84,6 +60,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <link rel="stylesheet" href="css/prettyPhoto.css" />
 <link rel="stylesheet" href="css/flexslider.css" />
 <link rel="stylesheet" href="css/custom-styles.css">
+<link rel="stylesheet" href="button.css">
 
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -142,7 +119,7 @@ $(document).ready(function () {
 <header>
 <div class="page-width">
 
-<a class="logo" href="index.php">&nbsp;</a>
+<a class="logo" href="index_resident.php">&nbsp;</a>
 
 <nav>
 
@@ -152,10 +129,12 @@ $(document).ready(function () {
 
 
 <ul class="menubtns">
-<li><a href="index.php">Home</a></li>
-<li class="selected"><a href="signup.php">Sign Up</a></li>
-<li><a href="login.php">Log In</a></li>
-<li><a href="contact.php">Contact us</a></li>
+<li><a href="index_resident.php">Home</a></li>
+<li><a href="viewjob.php">Apply Job</a></li>
+<li><a href="jobhistory.php">Jog History</a></li>
+<li><a href="contact_resident.php">Contact us</a></li>
+<li class="selected"><a href="profile_resident.php">Profile</a></li>
+<li><a href="logout.php">Logout</a></li>
 </ul>
 </header>
 <br><br>
@@ -164,19 +143,15 @@ $(document).ready(function () {
 
 <div class="login-page">
 <div class="form">
-  <h2><center>Sign Up</center></h2>
-<form name="loginform" method="post" action="signup.php">
+  <h2><center>Update Account</center></h2>
+
+<form name="loginform" method="post" action="profile_resident.php">
   <table>
+      
+        <caption>Full Name:  <?php echo $_SESSION['fullname'];?></caption>
+
       <tr>
-        <td>User Name</td>
-        <td><input type="text" class="demoInputBox" name="username" id="username" placeholder="<?php if(isset($usernameError)){echo $usernameError;} ?>" required></td>
-      </tr>
-      <tr>
-        <td>Full Name</td>
-        <td><input type="text" class="demoInputBox" name="fullname" id="fullname" placeholder="" required></td>
-      </tr>
-      <tr>
-        <td>Password</td>
+        <td>New Password</td>
         <td><input type="password" class="demoInputBox" name="password" id="password" minlength="6" placeholder="<?php if(isset($passwordError)){echo $passwordError;} ?>" required></td>
       </tr>
       <tr>
@@ -184,25 +159,13 @@ $(document).ready(function () {
         <td><input type="password" class="demoInputBox" name="confirm_password" id="confirm_password" placeholder="" required></td>
       </tr>
       <tr>
-        <td>Email</td>
-        <td><input type="text" class="demoInputBox" name="email" id="email" placeholder="<?php if(isset($emailError)){echo $emailError;} ?>" required></td>
-      </tr>
-      <tr>
-        <td>Gender: </td>
-        <td><input type="radio" name="gender" id="gender" value="Male"> Male
-        <input type="radio" name="gender" id="gender" value="Female"> Female
-        </td>
-      </tr>
-      <tr>
-        <td>Are you a resident of Jinjang Utara?</td>
-        <td><input type="radio" name="role" id="role" value="resident"> Yes
-        <input type="radio" name="role" id="role" value="nonresident"> No
-        </td>
+        <td>New Email</td>
+        <td><input type="text" class="demoInputBox" name="email" id="email" placeholder="<?php if(isset($emailError)){echo $emailError;} ?>" ></td>
       </tr>
       <tr>
         <td colspan=2>
-        <input type="checkbox" name="terms"> I accept Terms and Conditions
-        <input type="submit" name="register-user" value="Register" class="btnRegister"></td>
+
+        <input type="submit" name="register-user" value="Update" class="btnRegister"></td>
       </tr>
     </table>
 
