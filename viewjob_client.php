@@ -151,10 +151,14 @@ $(document).ready(function () {
 
 						<ul class="nav">
 						 <li><a href="index.php">Home</a></li>
+             <li><a href="newjob.php">Post Job</a></li>
 						 <li class="dropdown active"><a href="viewjob.php">View Jobs</a></li>
 						 <li><a href="index.php">Log Out</a></li>
 						 <p><strong> &nbsp &nbsp &nbsp &nbsp
 						             &nbsp &nbsp &nbsp &nbsp
+                         &nbsp &nbsp &nbsp &nbsp
+                         &nbsp &nbsp &nbsp &nbsp
+                         &nbsp &nbsp &nbsp &nbsp
 							 Welcome, <?php echo $_SESSION['fullname'];?>!</strong></p>
 						</ul>
           </div>

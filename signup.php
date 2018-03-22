@@ -80,7 +80,6 @@ $(document).ready(function () {
            <li><a href="index.php">Home</a></li>
            <li class="dropdown active"><a href="signup.php">Sign Up</a></li>
            <li><a href="login.php">Log In</a></li>
-           <li><a href="viewjob.php">View Jobs</a></li>
           </ul>
           </div>
 

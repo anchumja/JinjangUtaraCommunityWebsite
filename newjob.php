@@ -131,9 +131,9 @@ $(document).ready(function () {
 
 
 						<ul class="nav">
-	           <li><a href="index.php">Home</a></li>
+	           <li><a href="index_client.php">Home</a></li>
 	           <li class="dropdown active"><a href="newjob.php">Post Job</a></li>
-	           <li><a href="viewjob.php">View Jobs</a></li>
+	           <li><a href="viewjob_client.php">View Jobs</a></li>
 	           <li><a href="index.php">Log Out</a></li>
 	           <p><strong> &nbsp &nbsp &nbsp &nbsp
 	             &nbsp &nbsp &nbsp &nbsp
