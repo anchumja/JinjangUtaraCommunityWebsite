@@ -88,7 +88,7 @@ $(document).ready(function () {
                 <a class=" data-toggle="dropdown" href="index.php">Home <b class="caret"></b></a>
             </li>
 
-             <li><a href="signup.php">Register</a></li>
+             <li><a href="signup_selection.php">Sign Up</a></li>
              <li><a href="login.php">Log In</a></li>
              <li><a href="newjob.php">Jobs</a></li>
 

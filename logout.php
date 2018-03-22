@@ -1,9 +1,8 @@
 <?php
-session_start();
-include("connection.php");
-//After you have checked that the username is correct.
-$username=$_POST['username'];
-
+session_destroy(); // Is Used To Destroy All Sessions
+//Or
+if(isset($_SESSION['id']))
+unset($_SESSION['id']);  //Is Used To Destroy Specified Session
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,18 +21,15 @@ $username=$_POST['username'];
 <nav>
 
 <div class="menubutton"></div>
-
-
-
-
 <ul class="menubtns">
-  <li><a href="index.php">Home</a></li>
-  <li><a href="newjob.php">Job</a></li>
-  <li><a href="logout.php">Log Out</a></li>
-</ul>
+<li class="selected"><a href="index.php">Home</a></li>
+<li><a href="signup.php">Sign Up</a></li>
+<li><a href="login.php">Log In</a></li>
+<li><a href="newjob.php">Job</a></li>
 </header>
 
 <body>
+
 
 
 
