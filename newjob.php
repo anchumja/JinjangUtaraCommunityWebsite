@@ -1,4 +1,4 @@
-<?php
+<?php 
 include ("connection.php");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -6,15 +6,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$fullname=$_SESSION['fullname'];
 
     $jobtitle = $_POST['jobtitle'];
-    $jobduration = $_POST['jobduration'];
+    $jobduration = $_POST['jobduration']; 
     $jobdescription = $_POST['jobdescription'];
-    $contactinfo = $_POST['contactinfo'];
+    $contactinfo = $_POST['contactinfo'];    
 	$startime = $_POST['startime'];
 	$endtime = $_POST['endtime'];
 	$jobID = intval( rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
 
-	$workernumberError="";
-	$salaryError="";
+	$workernumberError=""; 
+	$salaryError=""; 
 
 	if(!empty($_POST['workernumber'])){
 		if($_POST['workernumber'] < 0){
@@ -41,15 +41,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
 
 	if($workernumberError =="" && $salaryError ==""){
-		$newJob = "INSERT INTO `joblist` (`jobID`, `jobtitle`, `jobduration`, `jobdescription`, `startime`, `endtime`,`salary`, `contactinfo`, `status`,`maxWorker`, `workers`) VALUES ('$jobID', '$jobtitle', '$jobduration' ,'$jobdescription', '$startime', '$endtime', '$salary', '$contactinfo', 'Available', '$workernumber' , '0')";
-		if (mysqli_query($con, $newJob)){
+		$newJob = "INSERT INTO `joblist` (`jobID`, `jobtitle`, `jobduration`, `jobdescription`, `startime`, `endtime`,`salary`, `contactinfo`, `status`,`maxWorker`,`employer`, `workers`) VALUES ('$jobID', '$jobtitle', '$jobduration' ,'$jobdescription', '$startime', '$endtime', '$salary', '$contactinfo', 'Available', '$workernumber' ,'$fullname', '0')";
+		if (mysqli_query($con, $newJob)){	
 			echo '<script language="javascript">';
 			echo 'alert("Job successfully created")';
 			echo '</script>';
 			}
 		}
     }
-
+  
 ?>
 
 <!DOCTYPE HTML>
@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <header>
 <div class="page-width">
 
-<a class="logo" href="index.php">&nbsp;</a>
+<a class="logo" href="index.html">&nbsp;</a>
 
 <nav>
 
@@ -88,13 +88,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 </header>
 
 <div class="container">
-
+	
 <br><br><br><br>
 
 <div class="page-width">
 
 <div class="memberform">
-
+	
 	<form action="newjob.php" method="POST" class="registerform">
 		<h2>New Job Form</h2>
 		<div class="formelement">
@@ -121,18 +121,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		</div>
 		<div class="formelement">
 			<label for="Salary">Salary (RM per hour):</label>
-			<input type="number" min="1" id="salary" name="salary" value="" placeholder="<?php if(isset($salaryError)){echo $salaryError;} ?>" required />
+			<input type="number" min="1" id="salary" name="salary" value="" placeholder="" required />
 		</div>
 		<div class="formelement">
 			<label for="contactinfo">Contact Information:</label>
-			<input type="text" id="contactinfo" name="contactinfo" value="" placeholder="<?php if(isset($workernumberError)){echo $workernumberError;} ?>" required />
+			<input type="text" id="contactinfo" name="contactinfo" value="" placeholder="" required />
 		</div>
 		<div class="formelement">
 		<input type="submit" class="button" value="Create New Job" />
 		</div>
 		<div class="clear"></div>
 	</form>
-
+	
 
 
 </div>
@@ -204,19 +204,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 </footer>
 
-
-    <div class="footer-icons">
-
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-github"></i></a>
-
-    </div>
-
-  </div>
-
-</footer>
 
 </body>
 </html>
