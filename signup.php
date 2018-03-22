@@ -45,6 +45,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($confirmPassword != $password){
       $passwordError = "Both password must be same";
     }
+    if (strlen($_POST["password"]) <= '8') {
+        $passwordErr = "Your Password Must Contain At Least 8 Characters!";
+    }
 
     if($gender == ""){
       $genderError = "Please select a gender";
@@ -100,9 +103,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <li class="selected"><a href="signup.php">Sign Up</a></li>
 <li><a href="login.php">Log In</a></li>
 <li><a href="newjob.php">Job</a></li>
-<li><a href="donate.php">Donate</a></li>
-<li><a href="volunteer.php">Volunteer</a></li>
-<li><a href="contact.php">Contact us</a></li>
 </ul>
 </header>
 <br>
@@ -130,7 +130,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   		</tr>
   		<tr>
   			<td>Password</td>
-  			<td><input type="password" class="demoInputBox" name="password" id="password" placeholder="<?php if(isset($passwordError)){echo $passwordError;} ?>" required></td>
+  			<td><input type="password" minlength="6" class="demoInputBox" name="password" id="password" placeholder="<?php if(isset($passwordError)){echo $passwordError;} ?>" required></td>
   		</tr>
   		<tr>
   			<td>Confirm Password</td>

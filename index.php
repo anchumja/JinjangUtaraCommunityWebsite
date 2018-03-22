@@ -1,98 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <link rel="stylesheet" href="assets/style.css" />
-  <title>Jinjang Utara Community Page</title>
-  <script src="assets/jquery3.js"></script>
-  <script src="assets/scripts.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Piccolo Theme</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="assets/index.css" />
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<link rel="stylesheet" href="css/prettyPhoto.css" />
+<link rel="stylesheet" href="css/flexslider.css" />
+<link rel="stylesheet" href="css/custom-styles.css">
+
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" href="css/style-ie.css"/>
+<![endif]-->
+
+<!-- Favicons
+================================================== -->
+<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+<!-- JS
+================================================== -->
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/jquery.custom.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+
+    $("#btn-blog-next").click(function () {
+      $('#blogCarousel').carousel('next')
+    });
+     $("#btn-blog-prev").click(function () {
+      $('#blogCarousel').carousel('prev')
+    });
+
+     $("#btn-client-next").click(function () {
+      $('#clientCarousel').carousel('next')
+    });
+     $("#btn-client-prev").click(function () {
+      $('#clientCarousel').carousel('prev')
+    });
+
+});
+
+ $(window).load(function(){
+
+    $('.flexslider').flexslider({
+        animation: "slide",
+        slideshow: true,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+    });
+});
+
+</script>
+
 </head>
 
-<header>
-<div class="page-width">
+<body class="home">
+    <div class="container">
 
-<a class="logo" href="index.php">&nbsp;</a>
-
-<nav>
-
-<div class="menubutton"></div>
+      <div class="row header"><!-- Begin Header -->
 
 
+        <!-- Logo
+        ================================================== -->
+        <div class="logo">
+
+        </div>
+
+        <!-- Main Navigation
+        ================================================== -->
+        <div class="span7 navigation">
+            <div class="navbar hidden-phone">
+
+            <ul class="nav">
+            <li class="dropdown active">
+                <a class=" data-toggle="dropdown" href="index.php">Home <b class="caret"></b></a>
+            </li>
+
+             <li><a href="signup.php">Register</a></li>
+             <li><a href="login.php">Log In</a></li>
+             <li><a href="newjob.php">Jobs</a></li>
+
+            </div>
 
 
-<ul class="menubtns">
-<li class="selected"><a href="index.php">Home</a></li>
-<li><a href="signup.php">Sign Up</a></li>
-<li><a href="login.php">Log In</a></li>
-<li><a href="newjob.php">Job</a></li>
-<li><a href="donate.php">Donate</a></li>
-<li><a href="volunteer.php">Volunteer</a></li>
-<li><a href="contact.php">Contact us</a></li>
-</ul>
-</header>
 
-<body>
+        </div>
+
+      </div><!-- End Header -->
+
+    <div class="row headline"><!-- Begin Headline -->
+
+     	<!-- Slider Carousel
+        ================================================== -->
+        <div class="span8">
+            <div class="flexslider">
+              <ul class="slides">
+                <li><img src="images\kids.jpg" alt="slider" /></a></li>
+                <li><img src="images\kids1.jpg" alt="slider" /></a></li>
+              </ul>
+            </div>
+        </div>
+
+        <!-- Headline Text
+        ================================================== -->
+        <div class="span4">
+        	<h3>Welcome to Jinjang Utara Community Website. <br />
+          </h3>
+            <p class="lead">Bringing Hope to Jinjang Utara.</p>
+            <p>Jinjang, KL – 2 December – The children (and parents) of Jinjang Utara with great delight descended upon Padang Taman Aman Putra where a massive Christmas and Back-to-school party was organised especially for them. Anticipation filled the sunny blue sky, as the children knew their hosts would not disappoint, but supply above and beyond their expectations.</p>
+            <a href="#"><i class="icon-plus-sign"></i>Read More</a>
+        </div>
+    </div><!-- End Headline -->
+
+    <div class="row gallery-row"><!-- Begin Gallery Row -->
+
+    	<div class="span12">
+            <h5 class="title-bg">Recent Work
+                <small>That we are most proud of</small>
+                <button class="btn btn-mini btn-inverse hidden-phone" type="button">View Portfolio</button>
+            </h5>
+
+        <!-- Gallery Thumbnails
+        ================================================== -->
+
+            <div class="row clearfix no-margin">
+            <ul class="gallery-post-grid holder">
+
+                    <!-- Gallery Item 1 -->
+                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
+                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
+                            <span class="gallery-icons">
+                                <a href="images\handcraft1.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="images\handcraft1.jpg" class="item-details-link"></a>
+                            </span>
+                        </span>
+                        <a href="gallery-single.htm"><img src="images\handcraft1.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="gallery-single.htm">Handmade Handcraft</a>Purchase to assist childrens of Jinjang Utara.</span>
+                    </li>
+
+                    <!-- Gallery Item 2 -->
+                    <li class="span3 gallery-item" data-id="id-2" data-type="illustration">
+                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
+                            <span class="gallery-icons">
+                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="gallery-single.htm" class="item-details-link"></a>
+                            </span>
+                        </span>
+                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="gallery-single.htm">3 Color Poster Design</a>For a regional festival event.</span>
+                    </li>
+
+                    <!-- Gallery Item 3 -->
+                    <li class="span3 gallery-item" data-id="id-3" data-type="web">
+                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
+                            <span class="gallery-icons">
+                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="#" class="item-details-link"></a>
+                            </span>
+                        </span>
+                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="gallery-single.htm">Ink Pen Illustration</a>Created for a best selling children's book.</span>
+                    </li>
+
+                    <!-- Gallery Item 4 -->
+                    <li class="span3 gallery-item" data-id="id-4" data-type="video">
+                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
+                            <span class="gallery-icons">
+                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="gallery-single.htm" class="item-details-link"></a>
+                            </span>
+                        </span>
+                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="gallery-single.htm">Custom Illustration</a>For an international add campaign.</span>
+                    </li>
+
+                    <!-- Gallery Item 5 -->
+                    <li class="span3 gallery-item" data-id="id-5" data-type="web illustration">
+                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
+                            <span class="gallery-icons">
+                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="gallery-single.htm" class="item-details-link"></a>
+                            </span>
+                        </span>
+                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="gallery-single.htm">Icon Design</a>Classic retro style illustration.</span>
+                    </li>
+
+                    <!-- Gallery Item 6 -->
+                    <li class="span3 gallery-item" data-id="id-6" data-type="illustration design">
+                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
+                            <span class="gallery-icons">
+                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="gallery-single.htm" class="item-details-link"></a>
+                            </span>
+                        </span>
+                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="gallery-single.htm">Animation Cell</a>Creative storyboard illustration</span>
+                    </li>
+
+                    <!-- Gallery Item 7 -->
+                    <li class="span3 gallery-item" data-id="id-7" data-type="design">
+                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
+                            <span class="gallery-icons">
+                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="gallery-single.htm" class="item-details-link"></a>
+                            </span>
+                        </span>
+                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="gallery-single.htm">Poster Ad Campaign</a>Regional ad for a local company.</span>
+                    </li>
+
+                    <!-- Gallery Item 8 -->
+                    <li class="span3 gallery-item" data-id="id-8" data-type="web video">
+                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
+                            <span class="gallery-icons">
+                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="gallery-single.htm" class="item-details-link"></a>
+                            </span>
+                        </span>
+                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="gallery-single.htm">Magazine Ad</a>For an international add campaign.</span>
+                    </li>
 
 
 
+                </ul>
+                </div>
+            </div>
+
+    </div><!-- End Gallery Row -->
+
+    <div class="row"><!-- Begin Bottom Section -->
+
+    	<!-- Blog Preview
+        ================================================== -->
 
 
-<footer class="footer-distributed">
+    </div><!-- End Bottom Section -->
 
-  <div class="footer-left">
+    </div> <!-- End Container -->
 
-    <h3>Jinjang Utara Community Website</span></h3>
+    <!-- Footer Area
+        ================================================== -->
+        <footer class="footer-distributed">
 
-    <p class="footer-links">
-      <a href="#">Blog</a>
-      ·
-      <a href="#">About</a>
-      ·
-      <a href="#">FAQ</a>
-      ·
-      <a href="#">Contact</a>
-    </p>
+          <div class="footer-left">
 
-    <p class="footer-company-name">AGN &copy; 2015</p>
-  </div>
+            <h3>Jinjang Utara Community Website</span></h3>
 
-  <div class="footer-center">
+            <p class="footer-links">
+              <a href="#">Blog</a>
+              ·
+              <a href="#">About</a>
+              ·
+              <a href="#">FAQ</a>
+              ·
+              <a href="#">Contact</a>
+            </p>
 
-    <div>
-      <i class="fa fa-map-marker"></i>
-      <p><span>Jinjang Utara</span> 52000, Kuala Lumpur</p>
-    </div>
+            <p class="footer-company-name">AGN &copy; 2015</p>
+          </div>
 
-    <div>
-      <i class="fa fa-phone"></i>
-      <p>03-2716 2000</p>
-    </div>
+          <div class="footer-center">
 
-    <div>
-      <i class="fa fa-envelope"></i>
-      <p><a href="mailto:support@jucw.com">support@jucw.com</a></p>
-    </div>
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p><span>Jinjang Utara</span> 52000, Kuala Lumpur</p>
+            </div>
 
-  </div>
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>03-2716 2000</p>
+            </div>
 
-  <div class="footer-right">
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p><a href="mailto:support@jucw.com">support@jucw.com</a></p>
+            </div>
 
-    <p class="footer-company-about">
-      <span>About the company</span>
-       AGN strives to better the lives of the people within Jinjang Utara Community
-    </p>
+          </div>
 
-    <div class="footer-icons">
+          <div class="footer-right">
 
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-github"></i></a>
+            <p class="footer-company-about">
+              <span>About the company</span>
+               AGN strives to better the lives of the people within Jinjang Utara Community
+            </p>
 
-    </div>
+            <div class="footer-icons">
 
-  </div>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="#"><i class="fa fa-github"></i></a>
 
-</footer>
+            </div>
+
+          </div>
+
+        </footer>
+
+
+    <!-- Scroll to Top -->
+    <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
 
 </body>
 </html>

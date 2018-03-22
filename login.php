@@ -54,6 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
   <script src="assets/jquery3.js"></script>
   <script src="assets/scripts.js"></script>
+
 </head>
 
 <body>
@@ -69,11 +70,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 <ul class="menubtns">
 <li><a href="index.php">Home</a></li>
 <li><a href="signup.php">Sign Up</a></li>
-<li class="selected"><a href="login.php">Log In</a></li>
+<li><a href="login.php">Log In</a></li>
 <li><a href="newjob.php">Job</a></li>
-<li><a href="donate.php">Donate</a></li>
-<li><a href="volunteer.php">Volunteer</a></li>
-<li><a href="contact.php">Contact us</a></li>
 </ul>
 </header>
 <br>
