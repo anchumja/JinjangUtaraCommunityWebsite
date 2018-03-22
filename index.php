@@ -78,7 +78,7 @@ $(document).ready(function () {
 
           <ul class="nav">
            <li class="dropdown active"><a href="index.php">Home</a></li>
-           <li><a href="signup_selection.php">Sign Up</a></li>
+           <li><a href="signup.php">Sign Up</a></li>
            <li><a href="login.php">Log In</a></li>
            <li><a href="newjob.php">Jobs</a></li>
           </ul>
@@ -138,95 +138,44 @@ $(document).ready(function () {
                             </span>
                         </span>
                         <a href="gallery-single.htm"><img src="images\handcraft1.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">Handmade Handcraft</a>Purchase to assist childrens of Jinjang Utara.</span>
+                        <span class="project-details"><a href="gallery-single.htm">Handmade Bookmark</a>Purchase to assist childrens of Jinjang Utara.</span>
                     </li>
 
                     <!-- Gallery Item 2 -->
-                    <li class="span3 gallery-item" data-id="id-2" data-type="illustration">
+                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
                         <span class="gallery-hover-4col hidden-phone hidden-tablet">
                             <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
+                                <a href="images\ball.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="images\ball.jpg" class="item-details-link"></a>
                             </span>
                         </span>
-                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">3 Color Poster Design</a>For a regional festival event.</span>
+                        <a href="gallery-single.htm"><img src="images\ball.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="gallery-single.htm">Rattan Balls</a>Purchase to assist childrens of Jinjang Utara.</span>
                     </li>
 
                     <!-- Gallery Item 3 -->
-                    <li class="span3 gallery-item" data-id="id-3" data-type="web">
+                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
                         <span class="gallery-hover-4col hidden-phone hidden-tablet">
                             <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="#" class="item-details-link"></a>
+                                <a href="images\wristband.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="images\wristband.jpg" class="item-details-link"></a>
                             </span>
                         </span>
-                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">Ink Pen Illustration</a>Created for a best selling children's book.</span>
+                        <a href="gallery-single.htm"><img src="images\wristband.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="gallery-single.htm">Handmade Wristbands</a>Purchase to assist childrens of Jinjang Utara.</span>
                     </li>
 
                     <!-- Gallery Item 4 -->
-                    <li class="span3 gallery-item" data-id="id-4" data-type="video">
+                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
                         <span class="gallery-hover-4col hidden-phone hidden-tablet">
                             <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
+                                <a href="images\pouch.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                <a href="images\pouch.jpg" class="item-details-link"></a>
                             </span>
                         </span>
-                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">Custom Illustration</a>For an international add campaign.</span>
+                        <a href="gallery-single.htm"><img src="images\pouch.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="gallery-single.htm">Handmade Pouch</a>Purchase to assist childrens of Jinjang Utara.</span>
                     </li>
-
-                    <!-- Gallery Item 5 -->
-                    <li class="span3 gallery-item" data-id="id-5" data-type="web illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                        </span>
-                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">Icon Design</a>Classic retro style illustration.</span>
-                    </li>
-
-                    <!-- Gallery Item 6 -->
-                    <li class="span3 gallery-item" data-id="id-6" data-type="illustration design">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                        </span>
-                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">Animation Cell</a>Creative storyboard illustration</span>
-                    </li>
-
-                    <!-- Gallery Item 7 -->
-                    <li class="span3 gallery-item" data-id="id-7" data-type="design">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                        </span>
-                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">Poster Ad Campaign</a>Regional ad for a local company.</span>
-                    </li>
-
-                    <!-- Gallery Item 8 -->
-                    <li class="span3 gallery-item" data-id="id-8" data-type="web video">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                        </span>
-                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">Magazine Ad</a>For an international add campaign.</span>
-                    </li>
-
-
-
                 </ul>
                 </div>
             </div>
