@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Piccolo Theme</title>
+<title>Jinjang Utara Community Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="assets/index.css" />
@@ -67,38 +67,29 @@ $(document).ready(function () {
 </head>
 
 <body class="home">
+  <div class="container-fluid">
+    <div class="row w">
+      <div class="offset1 span5">
+        <a href="index.php"><div class="logo"></div></a>
+      </div>
+      <div class="span8 navigation">
+          <div class="navbar hidden-phone">
+
+
+          <ul class="nav">
+           <li class="dropdown active"><a href="index.php">Home</a></li>
+           <li><a href="signup_selection.php">Sign Up</a></li>
+           <li><a href="login.php">Log In</a></li>
+           <li><a href="newjob.php">Jobs</a></li>
+          </ul>
+          </div>
+
+      </div>
+    </div>
+  </div>
     <div class="container">
 
-      <div class="row header"><!-- Begin Header -->
 
-
-        <!-- Logo
-        ================================================== -->
-        <div class="logo">
-
-        </div>
-
-        <!-- Main Navigation
-        ================================================== -->
-        <div class="span7 navigation">
-            <div class="navbar hidden-phone">
-
-            <ul class="nav">
-            <li class="dropdown active">
-                <a class=" data-toggle="dropdown" href="index.php">Home <b class="caret"></b></a>
-            </li>
-
-             <li><a href="signup_selection.php">Sign Up</a></li>
-             <li><a href="login.php">Log In</a></li>
-             <li><a href="newjob.php">Jobs</a></li>
-
-            </div>
-
-
-
-        </div>
-
-      </div><!-- End Header -->
 
     <div class="row headline"><!-- Begin Headline -->
 
