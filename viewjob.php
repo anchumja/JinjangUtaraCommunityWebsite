@@ -3,6 +3,7 @@ include ("connection.php");
 
 $aa= "SELECT * FROM joblist WHERE status = 'Available' ";
 $bb = mysqli_query($con, $aa);
+$rm="RM";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -85,6 +86,7 @@ $ff = mysqli_query($con, $ee);
 <link rel="stylesheet" href="css/prettyPhoto.css" />
 <link rel="stylesheet" href="css/flexslider.css" />
 <link rel="stylesheet" href="css/custom-styles.css">
+<link rel="stylesheet" href="style3.css">
 
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -140,47 +142,52 @@ $(document).ready(function () {
 </head>
 
 <body class="home">
-  <div class="container-fluid">
-    <div class="row w">
-      <div class="offset1 span5">
-        <a href="index.php"><div class="logo"></div></a>
-      </div>
-      <div class="span8 navigation">
-          <div class="navbar hidden-phone">
+<header>
+<div class="page-width">
+
+<a class="logo" href="index_resident.php">&nbsp;</a>
+
+<nav>
+
+<div class="menubutton"></div>
 
 
-						<ul class="nav">
-						 <li><a href="index.php">Home</a></li>
-						 <li><a href="signup.php">Sign Up</a></li>
-						 <li><a href="login.php">Log In</a></li>
-						 <li class="dropdown active"><a href="viewjob.php">View Jobs</a></li>
 
 
-						</ul>
-          </div>
+<ul class="menubtns">
+<li><a href="index_resident.php">Home</a></li>
+<li class="selected"><a href="viewjob.php">Apply Job</a></li>
+<li><a href="jobhistory.php">Jog History</a></li>
+<li><a href="contact_resident.php">Contact us</a></li>
+<li><a href="logout.php">Logout</a></li>
+</ul>
+</header>
 
-      </div>
-    </div>
-  </div>
-
-<div class="container propertiespage">
+<br><br>
+<br>
+<br>
+<br>
 
 
 
 <div class="page-width">
 
 
-<div class="properties_search_container">
+
+	<h3>Job List <br />
+          </h3>
 
 
 <form class="searchform" method="POST" action="properties.html">
+
 <?php if(mysqli_num_rows($bb) > 0) {
   echo '<table style="border:1px solid black">';
     echo '<thead>
       <tr>
         <th>JobID</th>
         <th>Job Title</th>
-        <th>Job Duration</th>
+        <th>Job Start Date</th>
+        <th>Job End Date</th>
         <th>Job Description</th>
         <th>Job Start Time</th>
         <th>Job End Time</th>
@@ -188,22 +195,23 @@ $(document).ready(function () {
         <th>Contact Info</th>
         <th>Status</th>
         <th>Employer</th>
-        <th>Workers<th>
+        <th>Workers Available</th>
       </tr>
     </thead>';
     while($row = mysqli_fetch_array($bb)){
       echo '<form><tbody><tr>';
       echo '<td>'. $row["jobID"]. '</td>';
-      echo '<td>'. $row["jobtitle"] .'</td>';
-      echo '<td>'. $row["jobduration"] .'</td>';
-      echo '<td>'. $row["jobdescription"] .'</td>';
-      echo '<td>'. $row["startime"] .'</td>';
-      echo '<td>'. $row["endtime"] .'</td>';
-      echo '<td>'. $row["salary"] .'</td>';
-      echo '<td>'. $row["contactinfo"] .'</td>';
-      echo '<td>'. $row["status"] .'</td>';
-      echo '<td>'. $row["employer"] .'</td>';
-      echo '<td>'. $row["workers"] .'</td>';
+      echo '<td align="middle" style="width:150px;">'. $row["jobtitle"] .'</td>';
+      echo '<td align="middle" style="width:100px;">'. $row["startdate"] .'</td>';
+      echo '<td align="middle" style="width:100px;">'. $row["enddate"] .'</td>';
+      echo '<td align="middle" style="width:350px;">'. $row["jobdescription"] .'</td>';
+      echo '<td align="middle" >'. $row["startime"] .'</td>';
+      echo '<td align="middle" >'. $row["endtime"] .'</td>';
+      echo '<td align="middle" >'.'RM '.$row["salary"] .'</td>';
+      echo '<td align="middle" >'. $row["contactinfo"] .'</td>';
+      echo '<td align="middle" >'. $row["status"] .'</td>';
+      echo '<td align="middle" >'. $row["employer"] .'</td>';
+      echo '<td align="middle" style="width:50px;">'. $row["workers"] .'</td>';
       echo '</tbody></form>';
     }
   echo '</table>';

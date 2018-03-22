@@ -115,25 +115,26 @@ $(document).ready(function () {
 </head>
 
 <body class="home">
-  <div class="container-fluid">
-    <div class="row w">
-      <div class="offset1 span5">
-        <a href="index.php"><div class="logo"></div></a>
-      </div>
-      <div class="span8 navigation">
-          <div class="navbar hidden-phone">
+<header>
+<div class="page-width">
+
+<a class="logo" href="index.php">&nbsp;</a>
+
+<nav>
+
+<div class="menubutton"></div>
 
 
-          <ul class="nav">
-           <li><a href="index.php">Home</a></li>>
-           <li><a href="signup.php">Sign Up</a></li>
-           <li class="dropdown active"><a href="login.php">Log In</a></li>
-          </ul>
-          </div>
 
-      </div>
-    </div>
-  </div>
+
+<ul class="menubtns">
+<li ><a href="index.php">Home</a></li>
+<li><a href="signup.php">Sign Up</a></li>
+<li><a href="login.php">Log In</a></li>
+<li class="selected"><a href="contact.php">Contact us</a></li>
+</ul>
+</header>
+<br><br>
 
       <div class="login-page">
         <div class="form">

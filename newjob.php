@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$fullname=$_SESSION['fullname'];
 
     $jobtitle = $_POST['jobtitle'];
-    $jobduration = $_POST['jobduration'];
+
     $jobdescription = $_POST['jobdescription'];
     $contactinfo = $_POST['contactinfo'];
 	$startime = $_POST['startime'];
@@ -28,6 +28,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		}
 	}
 
+	if(time()>strtotime($_POST['startdate'])){
+		$dateError="Cannot be before today !!";
+	} else {
+		$ddate = strtotime($_POST['startdate']);
+		$date = date('Y-m-d',$ddate);}
+
+	if(strtotime($_POST['startdate'])>strtotime($_POST['enddate'])){
+		$dateError="Cannot be before start date !!";
+	} else {
+		$ddate2 = strtotime($_POST['enddate']);
+		$date2 = date('Y-m-d',$ddate2);}	
+
 	if(!empty($_POST['salary'])){
 		if($_POST['salary'] < 0){
 			$salaryError = "Salary cannot be negative";
@@ -40,8 +52,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		}
 	}
 
-	if($workernumberError =="" && $salaryError ==""){
-		$newJob = "INSERT INTO `joblist` (`jobID`, `jobtitle`, `jobduration`, `jobdescription`, `startime`, `endtime`,`salary`, `contactinfo`, `status`,`maxWorker`, `workers`) VALUES ('$jobID', '$jobtitle', '$jobduration' ,'$jobdescription', '$startime', '$endtime', '$salary', '$contactinfo', 'Available', '$workernumber' , '0')";
+	if($workernumberError =="" && $salaryError =="" && $dateError == ""){
+		$newJob = "INSERT INTO `joblist` (`jobID`, `jobtitle`, `startdate`, `enddate`, `jobdescription`, `startime`, `endtime`,`salary`, `contactinfo`, `status`,`maxWorker`,`employer`, `workers`) VALUES ('$jobID', '$jobtitle', '$date', '$date2' ,'$jobdescription', '$startime', '$endtime', '$salary', '$contactinfo', 'Available', '$workernumber' ,'$fullname', '0')";
 		if (mysqli_query($con, $newJob)){
 			echo '<script language="javascript">';
 			echo 'alert("Job successfully created")';
@@ -59,14 +71,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <title>Jinjang Utara Community Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="assets/style.css" />
+
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/bootstrap-responsive.css">
 <link rel="stylesheet" href="css/prettyPhoto.css" />
 <link rel="stylesheet" href="css/flexslider.css" />
-<link rel="stylesheet" href="css/custom-styles.css">
 
+<link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="assets/form.css" />
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <link rel="stylesheet" href="css/style-ie.css"/>
@@ -121,85 +134,90 @@ $(document).ready(function () {
 </head>
 
 <body class="home">
-  <div class="container-fluid">
-    <div class="row w">
-      <div class="offset1 span5">
-        <a href="index.php"><div class="logo"></div></a>
-      </div>
-      <div class="span8 navigation">
-          <div class="navbar hidden-phone">
+<header>
+<div class="page-width">
 
+<a class="logo" href="index_client.php">&nbsp;</a>
 
-						<ul class="nav">
-	           <li><a href="index_client.php">Home</a></li>
-	           <li class="dropdown active"><a href="newjob.php">Post Job</a></li>
-	           <li><a href="viewjob_client.php">View Jobs</a></li>
-	           <li><a href="index.php">Log Out</a></li>
-	           <p><strong> &nbsp &nbsp &nbsp &nbsp
-	             &nbsp &nbsp &nbsp &nbsp
-	             &nbsp &nbsp &nbsp &nbsp
-	             &nbsp &nbsp &nbsp &nbsp
-	             &nbsp &nbsp &nbsp &nbsp
-	             Welcome, <?php echo $_SESSION['fullname'];?>!</strong></p>
-	          </ul>
-          </div>
+<nav>
 
-      </div>
-    </div>
-  </div>
+<div class="menubutton"></div>
 
 
 
 
-	<div class="page-width">
+<ul class="menubtns">
+<li ><a href="index_client.php">Home</a></li>
+<li class="selected"><a href="newjob.php">Post a Job</a></li>
+<li><a href="">Jobs Post History</a></li>
+<li><a href="donate_client.php">Donate</a></li>
+<li><a href="contact_client.php">Contact us</a></li>
+<li><a href="">Profile</a></li>
+<li><a href="logout.php">Logout</a></li>
+</ul>
+</header>
 
-	<div class="memberform">
-
-		<form action="newjob.php" method="POST" class="registerform">
-			<h2>New Job Form</h2>
-			<div class="formelement">
-				<label for="jobtitle">Job Title:</label>
-				<input type="text" id="jobtitle" name="jobtitle" value="" placeholder="" required />
-			</div>
-			<div class="formelement">
-				<label for="jobduration">Job Duration:</label>
-				<input type="text" id="jobduration" name="jobduration" value="" placeholder="" required />
-			</div>
-			<div class="formelement1">
-				<center><label for="jobtime">Job Time:</label>
-				<input type="time" id="startime" name="startime" value="" required/>
-				<br>
-				<center>to<center>
-				<br>
-				<input type="time" id="endtime" name="endtime" value="" required/>
-			</div>
-			<div class="formelement">
-				<label for="jobdescription">Job Description</label>
-				<textarea rows="5" cols="50" id="jobdescription" name="jobdescription" value="" placeholder="" required> </textarea>
-			</div>
-			<div class="formelement">
-				<label for="Number of Workers">Number of Workers:</label>
-				<input type="number" min="1" id="workernumber" name="workernumber" value="" placeholder="" required />
-			</div>
-			<div class="formelement">
-				<label for="Salary">Salary (RM per hour):</label>
-				<input type="number" min="1" id="salary" name="salary" value="" placeholder="<?php if(isset($salaryError)){echo $salaryError;} ?>" required />
-			</div>
-			<div class="formelement">
-				<label for="contactinfo">Contact Information:</label>
-				<input type="text" id="contactinfo" name="contactinfo" value="" placeholder="<?php if(isset($workernumberError)){echo $workernumberError;} ?>" required />
-			</div>
-			<div class="formelement">
-			<input type="submit" class="button" value="Create New Job" />
-			</div>
-			<div class="clear"></div>
-		</form>
+<br><br><br><br><br><br>
 
 
+<div class="container">
+	
+<br><br><br><br>
 
-	</div>
+<div class="page-width">
 
-	</div>
+<div class="memberform">
+	
+	<form action="newjob.php" method="POST" class="registerform">
+		<h2>New Job Form</h2>
+		<div class="formelement">
+			<label for="jobtitle">Job Title:</label>
+			<input type="text" id="jobtitle" name="jobtitle" style="height:30px; "value="" placeholder="" required />
+		</div>
+		<div class="formelement">
+			<label for="jobdate">Job Date:</label>
+			<input type="date" id="startdate" name="startdate" style="width:150px; height:30px;" value="" required/>
+			to
+			<input type="date" id="enddate" name="enddate" style="width:150px; height:30px;" value="" required/><p>
+			<?php if(isset($dateError)){echo $dateError;} ?>
+		</div>
+		<div class="formelement">
+			<label for="jobtime">Job Time:</label>
+			<input type="time" id="startime" name="startime" style="width:100px; height:30px;" value="" required/>
+			to
+			<input type="time" id="endtime" name="endtime" style="width:100px; height:30px;" value="" required/>
+		</div>
+		<div class="formelement">
+			<label for="jobdescription">Job Description</label>
+			<textarea rows="5" cols="50" id="jobdescription" style="height:30px;" name="jobdescription" value="" placeholder="" required> </textarea>
+		</div>
+		<div class="formelement">
+			<label for="Number of Workers">Number of Workers:</label>
+			<input type="number" min="1" id="workernumber" style="height:30px;" name="workernumber" value="" placeholder="" required />
+		</div>
+		<div class="formelement">
+			<label for="Salary">Salary (RM per hour):</label>
+			<input type="number" min="1" id="salary" name="salary" style="height:30px;" value="" placeholder="" required />
+		</div>
+		<div class="formelement">
+			<label for="contactinfo">Contact Information:</label>
+			<input type="text" id="contactinfo" name="contactinfo" value="" style="height:30px;" placeholder="" required />
+		</div>
+		<div class="formelement">
+		<input type="submit" class="button" value="Create New Job" />
+		</div>
+		<div class="clear"></div>
+	</form>
+	
+
+
+</div>
+
+</div>
+
+
+
+</div>
 
     <!-- Footer Area
         ================================================== -->
@@ -243,6 +261,7 @@ $(document).ready(function () {
 
           <div class="footer-right">
 
+<<<<<<< HEAD
             <p class="footer-company-about">
               <span>About the company</span>
                AGN strives to better the lives of the people within Jinjang Utara Community
@@ -264,6 +283,11 @@ $(document).ready(function () {
 
     <!-- Scroll to Top -->
     <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
+
+  </div>
+
+</footer>
+
 
 </body>
 </html>

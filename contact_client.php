@@ -10,7 +10,7 @@
 <header>
 <div class="page-width">
 
-<a class="logo" href="index.php">&nbsp;</a>
+<a class="logo" href="index_client.php">&nbsp;</a>
 
 <nav>
 
@@ -20,10 +20,13 @@
 
 
 <ul class="menubtns">
-<li ><a href="index.php">Home</a></li>
-<li><a href="signup.php">Sign Up</a></li>
-<li><a href="login.php">Log In</a></li>
-<li class="selected"><a href="contact.php">Contact us</a></li>
+<li ><a href="index_client.php">Home</a></li>
+<li><a href="newjob.php">Post a Job</a></li>
+<li><a href="">Jobs Post History</a></li>
+<li><a href="donate_client.php">Donate</a></li>
+<li class="selected"><a href="contact_client.php">Contact us</a></li>
+<li><a href="">Profile</a></li>
+<li><a href="logout.php">Logout</a></li>
 </ul>
 </header>
 
