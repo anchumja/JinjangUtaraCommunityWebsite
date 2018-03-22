@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 <title>Jinjang Utara Community Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="assets/index.css" />
+<link rel="stylesheet" href="assets/login.css" />
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/bootstrap-responsive.css">
@@ -128,7 +128,7 @@ $(document).ready(function () {
            <li><a href="index.php">Home</a></li>>
            <li><a href="signup.php">Sign Up</a></li>
            <li class="dropdown active"><a href="login.php">Log In</a></li>
-           <li><a href="newjob.php">Jobs</a></li>
+           <li><a href="viewjob.php">View Jobs</a></li>
           </ul>
           </div>
 
