@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="script.js"></script>
+</head>
+<body>
+<!-- Required Div Starts Here -->
+<h2>Form Validation Using AJAX</h2>
+<form action='#' id="myForm" method='post' name="myForm">
+<h3>Fill Your Information!</h3>
+
+<table>
+<tr>
+<td>Username</td>
+<td><input id='username1' name='username' onblur="validate('username', this.value)" type='text'></td>
+<td>
+<div id='username'></div>
+</td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input id='password1' name='password' onblur="validate('password', this.value)" type='password'></td>
+<td>
+<div id='password'></div>
+</td>
+</tr>
+
+</table>
+<input onsubmit="checkForm()" type='button' value='Submit'>
+</form>
+
+</body>
+</html>
