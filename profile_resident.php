@@ -1,8 +1,8 @@
 <?php 
  include ("connection.php");
  $usernameError="Enter your username"; 
- $passwordError="Enter your Password"; 
- $emailError="Enter your Email"; 
+ $passwordError="Enter your Password";
+ $username=$_SESSION['username']; 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $confirmPassword = $_POST['confirm_password'];
@@ -30,17 +30,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if($passwordError == "" && $emailError == "" ){
       if
-    (mysqli_query($con, "UPDATE `resident` SET `password` = '$password', `email` = '$email' WHERE `username` = '".$username."'"));
-        {
+    (mysqli_query($con, "UPDATE `resident` SET `password` = '$password', `email` = '$email' WHERE `username` = '".$username."'")){
+       
         echo '<script language="javascript">';
         echo 'alert("Profile has been updated.")';
         echo '</script>'; 
         }     
     }
-    mysqli_query($con, $signUp);
     echo '<script language="javascript">';
-    echo 'alert("Thank for signing up");';
-    echo 'window.location.href="Login.php";';
+    echo '$emailError';
+    echo 'window.location.href="profile_resident.php";';
     echo '</script>';
     }
       
@@ -131,7 +130,7 @@ $(document).ready(function () {
 <ul class="menubtns">
 <li><a href="index_resident.php">Home</a></li>
 <li><a href="viewjob.php">Apply Job</a></li>
-<li><a href="jobhistory.php">Jog History</a></li>
+<li><a href="jobhistory_resident.php">Jog History</a></li>
 <li><a href="contact_resident.php">Contact us</a></li>
 <li class="selected"><a href="profile_resident.php">Profile</a></li>
 <li><a href="logout.php">Logout</a></li>
@@ -160,7 +159,8 @@ $(document).ready(function () {
       </tr>
       <tr>
         <td>New Email</td>
-        <td><input type="text" class="demoInputBox" name="email" id="email" placeholder="<?php if(isset($emailError)){echo $emailError;} ?>" ></td>
+        <td><input type="text" class="demoInputBox" name="email" id="email" placeholder="" ></td>
+
       </tr>
       <tr>
         <td colspan=2>
@@ -168,6 +168,7 @@ $(document).ready(function () {
         <input type="submit" name="register-user" value="Update" class="btnRegister"></td>
       </tr>
     </table>
+    <?php if(isset($emailError)){echo $emailError;} ?>
 
   </form>
   </div>

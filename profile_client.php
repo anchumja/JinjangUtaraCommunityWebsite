@@ -2,7 +2,8 @@
  include ("connection.php");
  $usernameError="Enter your username"; 
  $passwordError="Enter your Password"; 
- $emailError="Enter your Email"; 
+
+ $username=$_SESSION['username'];
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $confirmPassword = $_POST['confirm_password'];
@@ -37,11 +38,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo '</script>'; 
         }     
     }
-    mysqli_query($con, $signUp);
-    echo '<script language="javascript">';
-    echo 'alert("Thank for signing up");';
-    echo 'window.location.href="Login.php";';
-    echo '</script>';
     }
       
   
@@ -119,7 +115,7 @@ $(document).ready(function () {
 <header>
 <div class="page-width">
 
-<a class="logo" href="index_resident.php">&nbsp;</a>
+<a class="logo" href="index_client.php">&nbsp;</a>
 
 <nav>
 
@@ -129,10 +125,10 @@ $(document).ready(function () {
 
 
 <ul class="menubtns">
-<li><a href="index_resident.php">Home</a></li>
-<li><a href="viewjob.php">Apply Job</a></li>
-<li><a href="jobhistory.php">Jog History</a></li>
-<li><a href="contact_resident.php">Contact us</a></li>
+<li><a href="index_client.php">Home</a></li>
+<li><a href="newjob.php">Create New Job</a></li>
+<li><a href="jobhistory_client.php">Job History</a></li>
+<li><a href="contact_client.php">Contact us</a></li>
 <li class="selected"><a href="profile_client.php">Profile</a></li>
 <li><a href="logout.php">Logout</a></li>
 </ul>
@@ -160,7 +156,7 @@ $(document).ready(function () {
       </tr>
       <tr>
         <td>New Email</td>
-        <td><input type="text" class="demoInputBox" name="email" id="email" placeholder="<?php if(isset($emailError)){echo $emailError;} ?>" ></td>
+        <td><input type="text" class="demoInputBox" name="email" id="email" placeholder="" ></td>
       </tr>
       <tr>
         <td colspan=2>
@@ -168,7 +164,8 @@ $(document).ready(function () {
         <input type="submit" name="register-user" value="Update" class="btnRegister"></td>
       </tr>
     </table>
-
+    <?php if(isset($emailError)){echo $emailError;} ?>
+    
   </form>
   </div>
   </div> <!-- End Container -->

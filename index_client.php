@@ -88,9 +88,9 @@ $(document).ready(function () {
 
 
 <ul class="menubtns">
-<li class="selected"><a href="index_client.php">Home</a></li>
+<li class="selected" ><a href="index_client.php">Home</a></li>
 <li><a href="newjob.php">Post a Job</a></li>
-<li><a href="">Jobs Post History</a></li>
+<li><a href="jobhistory_client.php">Job History</a></li>
 <li><a href="donate_client.php">Donate</a></li>
 <li><a href="contact_client.php">Contact us</a></li>
 <li><a href="profile_client.php">Profile</a></li>
