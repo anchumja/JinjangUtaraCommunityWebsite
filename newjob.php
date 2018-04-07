@@ -70,16 +70,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Jinjang Utara Community Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+<link rel="stylesheet" href="assets/style.css" />
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/bootstrap-responsive.css">
 <link rel="stylesheet" href="css/prettyPhoto.css" />
 <link rel="stylesheet" href="css/flexslider.css" />
-
-<link rel="stylesheet" href="assets/style.css" />
-<link rel="stylesheet" href="assets/form.css" />
+<link rel="stylesheet" href="css/custom-styles.css">
+<link rel="stylesheet" href="style3.css">
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <link rel="stylesheet" href="css/style-ie.css"/>
