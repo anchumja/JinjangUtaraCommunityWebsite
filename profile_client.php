@@ -1,50 +1,46 @@
-<?php
-include("connection.php");
+<?php 
+ include ("connection.php");
+ $usernameError="Enter your username"; 
+ $passwordError="Enter your Password"; 
 
-if($_SERVER['REQUEST_METHOD'] == 'POST')
-{
+ $username=$_SESSION['username'];
 
- $username=$_POST['username'];
- $password=$_POST['password'];
-
- $usernameError="";
- $passwordError="";
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $confirmPassword = $_POST['confirm_password'];
+    $password = $_POST['password'];
 
 
- if($username!=''&&$password!=''){
-   $findResident = "SELECT * FROM resident WHERE username='$username' and password='$password'";
-   $findResidentUsrnamePass = mysqli_query($con, $findResident);
-   $findnonResident = "SELECT * FROM nonresident WHERE username='$username' and password='$password'";
-   $findnonResidentUsrnamePass = mysqli_query($con, $findnonResident);
+    $emailError=""; 
+    $passwordError=""; 
 
-   if (mysqli_num_rows($findResidentUsrnamePass) > 0){
-    $resource=mysqli_fetch_array($findResidentUsrnamePass);
-    $_SESSION['username']=$username;
-    $_SESSION['fullname']=$resource['fullname'];
-    $_SESSION['email']=$resource['email'];
-    $_SESSION['password']=$resource['password'];
-    $_SESSION['role']='resident';
-    header('location: index_resident.php');
-    }
-    else if (mysqli_num_rows($findnonResidentUsrnamePass) > 0){
-    $resource=mysqli_fetch_array($findnonResidentUsrnamePass);
-    $_SESSION['username']=$username;
-    $_SESSION['fullname']=$resource['fullname'];
-    $_SESSION['email']=$resource['email'];
-    $_SESSION['password']=$resource['password'];
-    $_SESSION['role']='nonresident';
-    header('location: index_client.php');
-    }
+
+    $findResident = "SELECT `email` FROM `resident` WHERE `email` = '".$_POST['email']."'";
+    $findResidentEmail = mysqli_query($con, $findResident);
+    $findnonresident = "SELECT `email` FROM `nonresident` WHERE `email` = '".$_POST['email']."'";
+    $findnonresidentEmail = mysqli_query($con, $findnonresident);
+    if(mysqli_num_rows($findResidentEmail) > 0 || mysqli_num_rows($findnonresidentEmail) > 0){
+      $emailError = "Someone have used this email already";
+    }   
     else {
-    echo '<script language="javascript">';
-    echo 'alert("Wrong Username or Password!");';
-    echo 'window.location.href="Login.php";';
-    echo '</script>';;
+    $email = $_POST['email'];
     }
- }
- else { echo'Enter both username and password'; }
-}
+      
+    if($confirmPassword != $password){
+      $passwordError = "Both password must be same";
+    }
 
+    if($passwordError == "" && $emailError == "" ){
+      if
+    (mysqli_query($con, "UPDATE `nonresident` SET `password` = '$password', `email` = '$email' WHERE `username` = '".$username."'"));
+        {
+        echo '<script language="javascript">';
+        echo 'alert("Profile has been updated.")';
+        echo '</script>'; 
+        }     
+    }
+    }
+      
+  
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -53,13 +49,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 <title>Jinjang Utara Community Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="assets/login.css" />
+<link rel="stylesheet" href="assets/signup.css" />
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/bootstrap-responsive.css">
 <link rel="stylesheet" href="css/prettyPhoto.css" />
 <link rel="stylesheet" href="css/flexslider.css" />
 <link rel="stylesheet" href="css/custom-styles.css">
+<link rel="stylesheet" href="button.css">
 
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -118,7 +115,7 @@ $(document).ready(function () {
 <header>
 <div class="page-width">
 
-<a class="logo" href="index.php">&nbsp;</a>
+<a class="logo" href="index_client.php">&nbsp;</a>
 
 <nav>
 
@@ -128,29 +125,50 @@ $(document).ready(function () {
 
 
 <ul class="menubtns">
-<li ><a href="index.php">Home</a></li>
-<li><a href="signup.php">Sign Up</a></li>
-<li><a href="login.php">Log In</a></li>
-<li class="selected"><a href="contact.php">Contact us</a></li>
+<li><a href="index_client.php">Home</a></li>
+<li><a href="newjob.php">Create New Job</a></li>
+<li><a href="jobhistory_client.php">Job History</a></li>
+<li><a href="contact_client.php">Contact us</a></li>
+<li class="selected"><a href="profile_client.php">Profile</a></li>
+<li><a href="logout.php">Logout</a></li>
 </ul>
 </header>
 <br><br>
 
-      <div class="login-page">
-        <div class="form">
-          <h2><center>Login</center></h2>
-          <form name="loginform" action="login.php" class="login-form" method="POST">
-            <center><input type="text" name="username" id="username" placeholder="username" required><center><br>
-            <center><input type="password" name="password" id="password" placeholder="password" required><center>
-            <input type="submit" name="login-user" value="Login" class="btnRegister">
-            <p class="message">Not registered? <a href="signup.php">Create an account</a></p>
-          </form>
-        </div>
-      </div>
 
 
+<div class="login-page">
+<div class="form">
+  <h2><center>Update Account</center></h2>
 
+<form name="loginform" method="post" action="profile_client.php">
+  <table>
+      
+        <caption>Full Name:  <?php echo $_SESSION['fullname'];?></caption>
 
+      <tr>
+        <td>New Password</td>
+        <td><input type="password" class="demoInputBox" name="password" id="password" minlength="6" placeholder="<?php if(isset($passwordError)){echo $passwordError;} ?>" required></td>
+      </tr>
+      <tr>
+        <td>Confirm Password</td>
+        <td><input type="password" class="demoInputBox" name="confirm_password" id="confirm_password" placeholder="" required></td>
+      </tr>
+      <tr>
+        <td>New Email</td>
+        <td><input type="text" class="demoInputBox" name="email" id="email" placeholder="" ></td>
+      </tr>
+      <tr>
+        <td colspan=2>
+
+        <input type="submit" name="register-user" value="Update" class="btnRegister"></td>
+      </tr>
+    </table>
+    <?php if(isset($emailError)){echo $emailError;} ?>
+    
+  </form>
+  </div>
+  </div> <!-- End Container -->
 
     <!-- Footer Area
         ================================================== -->

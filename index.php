@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="css/flexslider.css" />
 <link rel="stylesheet" href="css/custom-styles.css">
 
+
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <link rel="stylesheet" href="css/style-ie.css"/>
@@ -67,26 +68,35 @@ $(document).ready(function () {
 </head>
 
 <body class="home">
-  <div class="container-fluid">
-    <div class="row w">
-      <div class="offset1 span5">
-        <a href="index.php"><div class="logo"></div></a>
-      </div>
-      <div class="span8 navigation">
-          <div class="navbar hidden-phone">
+<header>
+<div class="page-width">
+
+<a class="logo" href="index.php">&nbsp;</a>
+
+<nav>
+
+<div class="menubutton"></div>
 
 
-          <ul class="nav">
-           <li class="dropdown active"><a href="index.php">Home</a></li>
-           <li><a href="signup.php">Sign Up</a></li>
-           <li><a href="login.php">Log In</a></li>
-          </ul>
-          </div>
 
-      </div>
-    </div>
-  </div>
-    <div class="container">
+
+<ul class="menubtns">
+<li class="selected"><a href="index.php">Home</a></li>
+<li><a href="signup.php">Sign Up</a></li>
+<li><a href="login.php">Log In</a></li>
+<li><a href="contact.php">Contact us</a></li>
+</ul>
+</header>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<body>
 
 
 

@@ -1,0 +1,44 @@
+.formelement label{
+color: #000;
+display: block;
+font-size: 9pt;
+}
+
+.formelement textarea{
+min-height: 300px;
+}
+.formelement input, .formelement select, .formelement textarea{
+width: 100%;
+font-family: "Lato";
+padding: 5px;
+box-sizing: border-box;
+margin: 3px 0px;
+margin-bottom: 8px;
+background-color: rgba(255,255,255,0.3);
+border: 1px solid #aaa;
+border-radius: 3px;
+max-width: 100%;
+}
+
+.formelement1 input {
+font-family: "Lato";
+padding: 5px;
+box-sizing: border-box;
+margin: 3px 0px;
+margin-bottom: 8px;
+background-color: rgba(255,255,255,0.3);
+border: 1px solid #aaa;
+border-radius: 3px;}
+
+.formelement input:focus, .formelement select:focus, .formelement input:hover, .formelement select:hover, .formelement textarea:hover, .formelement textarea:select{
+background-color: rgba(255,255,255,1);
+border: 1px solid #555;
+}
+
+
+.formelement .header_special_button{
+margin-top:10px;
+padding: 10px;
+box-sizing: border-box;
+height: 40px;
+}

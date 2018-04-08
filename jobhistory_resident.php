@@ -1,13 +1,76 @@
 <?php
 include ("connection.php");
+$username=$_SESSION['username'];
 
-$aa= "SELECT * FROM joblist WHERE status = 'Available' ";
+$aa= "SELECT * FROM joinjob WHERE username = '$username' ";
 $bb = mysqli_query($con, $aa);
 $rm="RM";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
+$inIDnotFound="";
+
+$inID = $_POST['inID'];
+
+$cc= "SELECT * FROM TrainingSession WHERE sessionID = '$inID' ";
+$dd = mysqli_query($con, $cc);
+$row2 = mysqli_fetch_array($dd);
+	$sessionID = $row2["sessionID"];
+	$trainingType = $row2["trainingType"];
+	$date = $row2["date"];
+	$time = $row2["time"];
+	$title = $row2["title"];
+	$participants = $row2["participants"] + 1;
+	$status = $row2["status"];
+	$maxParticipants = $row2["maxParticipants"];
+	$rating = $row2["rating"];
+
+$ee= "SELECT sessionID FROM joinSession WHERE username = '$username' ";
+$ff = mysqli_query($con, $ee);
+
+	if ($sessionID == $inID){
+		if ($trainingType == 'Personal'){
+			$joinSession = "INSERT INTO `JoinSession` (`sessionID`, `title`, `date`, `time`, `trainingType`, `username`, `rating`) VALUES ('$sessionID', '$title', '$date' ,'$time', 'Personal' , '$username' ,'$rating') ";
+			if (mysqli_query($con, $joinSession)){
+				$setStatus = "UPDATE `TrainingSession` SET `status` = 'Full' WHERE sessionID = '$inID' ";
+				if (mysqli_query($con, $setStatus)){
+				echo '<script language="javascript">';
+				echo 'alert("Successfully register for session.")';
+				echo '</script>';
+				}
+			}
+		}
+
+		else { if (mysqli_num_rows($ff) > 0) { echo '<script language="javascript">';
+				echo 'alert("Already joined session.")';
+				echo '</script>'; }
+			else {
+			$joinSession = "INSERT INTO `JoinSession` (`sessionID`, `title`, `date`, `time`, `trainingType` , `username`,`rating`) VALUES ('$sessionID', '$title' ,'$date', '$time',  'Group' ,'$username','rating') ";
+				if (mysqli_query($con, $joinSession)) {
+					if ($participants == $maxParticipants){
+						$setStatus = "UPDATE `TrainingSession` SET `status` = 'Full' WHERE sessionID = '$inID' ";
+						if (mysqli_query($con, $setStatus)) {
+							echo '<script language="javascript">';
+							echo 'alert("Successfully register for session.")';
+							echo '</script>';
+						}
+					}
+
+					else {
+						$setnewPar = "UPDATE `TrainingSession` SET `participants` = '".$participants."' WHERE sessionID = '$inID' ";
+						if(mysqli_query($con, $setnewPar)){
+							echo '<script language="javascript">';
+							echo 'alert("Successfully register for session.")';
+							echo '</script>';
+						}
+					}
+				}
+			}
+		}
+		}
+	else
+		{$inIDnotFound = "Session ID does not exist.";}
 }
 ?>
 
@@ -94,8 +157,8 @@ $(document).ready(function () {
 
 <ul class="menubtns">
 <li><a href="index_resident.php">Home</a></li>
-<li class="selected"><a href="viewjob.php">Apply Job</a></li>
-<li><a href="jobhistory_resident.php">Job History</a></li>
+<li><a href="viewjob.php">Apply Job</a></li>
+<li class="selected"><a href="jobhistory_resident.php">Job History</a></li>
 <li><a href="contact_resident.php">Contact us</a></li>
 <li><a href="profile_resident.php">Profile</a></li>
 <li><a href="logout.php">Logout</a></li>
@@ -113,8 +176,8 @@ $(document).ready(function () {
 
 
 
-	<h3>Job List <br /></h3>
-	<h4>Click on job ID to apply for job. <br /></h4>
+	<h3>Job History <br />
+          </h3>
 
 
 <form class="searchform" method="POST" action="properties.html">
@@ -138,7 +201,7 @@ $(document).ready(function () {
     </thead>';
     while($row = mysqli_fetch_array($bb)){
       echo '<form><tbody><tr>';
-      echo '<td>'.'<a href="addjob.php?id='.$row["jobID"].'">'. $row["jobID"].'</a>'. '</td>';
+      echo '<td>'. $row["jobID"].'</a>'. '</td>';
       echo '<td align="middle" style="width:150px;">'. $row["jobtitle"] .'</td>';
       echo '<td align="middle" style="width:100px;">'. $row["startdate"] .'</td>';
       echo '<td align="middle" style="width:100px;">'. $row["enddate"] .'</td>';

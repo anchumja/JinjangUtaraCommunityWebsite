@@ -75,32 +75,29 @@ $(document).ready(function () {
 </head>
 
 <body class="home">
-  <div class="container-fluid">
-    <div class="row w">
-      <div class="offset1 span5">
-        <a href="index.php"><div class="logo"></div></a>
-      </div>
-      <div class="span8 navigation">
-          <div class="navbar hidden-phone">
+<header>
+<div class="page-width">
+
+<a class="logo" href="index_client.php">&nbsp;</a>
+
+<nav>
+
+<div class="menubutton"></div>
 
 
-          <ul class="nav">
-           <li class="dropdown active"><a href="index.php">Home</a></li>
-           <li><a href="newjob.php">Post Job</a></li>
-           <li><a href="viewjob.php">View Jobs</a></li>
-           <li><a href="index.php">Log Out</a></li>
-           <p><strong> &nbsp &nbsp &nbsp &nbsp
-             &nbsp &nbsp &nbsp &nbsp
-             &nbsp &nbsp &nbsp &nbsp
-             &nbsp &nbsp &nbsp &nbsp
-             &nbsp &nbsp &nbsp &nbsp
-             Welcome, <?php echo $_SESSION['fullname'];?>!</strong></p>
-          </ul>
-          </div>
 
-      </div>
-    </div>
-  </div>
+
+<ul class="menubtns">
+<li class="selected" ><a href="index_client.php">Home</a></li>
+<li><a href="newjob.php">Post a Job</a></li>
+<li><a href="jobhistory_client.php">Job History</a></li>
+<li><a href="donate_client.php">Donate</a></li>
+<li><a href="contact_client.php">Contact us</a></li>
+<li><a href="profile_client.php">Profile</a></li>
+<li><a href="logout.php">Logout</a></li>
+</ul>
+</header>
+<br><br><br>
     <div class="container">
 
 
@@ -121,7 +118,7 @@ $(document).ready(function () {
         <!-- Headline Text
         ================================================== -->
         <div class="span4">
-        	<h3>Welcome to Jinjang Utara Community Website. <br />
+        	<h3>Welcome to Jinjang Utara Community Website, <?php echo $_SESSION['fullname'];?>. <br />
           </h3>
             <p class="lead">Bringing Hope to Jinjang Utara.</p>
             <p>Jinjang, KL – 2 December – The children (and parents) of Jinjang Utara with great delight descended upon Padang Taman Aman Putra where a massive Christmas and Back-to-school party was organised especially for them. Anticipation filled the sunny blue sky, as the children knew their hosts would not disappoint, but supply above and beyond their expectations.</p>

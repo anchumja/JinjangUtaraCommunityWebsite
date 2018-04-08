@@ -63,7 +63,7 @@ blockquote.pull-right {border-right: 5px solid #999;}
 .logo h5 { display: inline-block; }
 
 /* Landscape phones and down */
-@media (max-width: 480px) {
+@media (max-width: 100%) {
 	.logo, .navigation {text-align: center;}
 	.row.header {margin-bottom: 30px;}
 	.logo h5 {display: block;}
@@ -646,7 +646,7 @@ a.forrst:hover {background-position: -208px -47px;}
 /**************************************
 / MISC
 **************************************/
-.row {margin-bottom:40px;}
+
 .sub-row30 {margin-bottom:30px;}
 .sub-row20 {margin-bottom:20px;}
 .no-margin {margin-bottom:0px;}

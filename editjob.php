@@ -1,20 +1,19 @@
 <?php
 include ("connection.php");
 
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
 	$fullname=$_SESSION['fullname'];
-
     $jobtitle = $_POST['jobtitle'];
-
+    $id=$_GET['jobID'];
     $jobdescription = $_POST['jobdescription'];
     $contactinfo = $_POST['contactinfo'];
 	$startime = $_POST['startime'];
 	$endtime = $_POST['endtime'];
-	$jobID = intval( rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
 
 	$workernumberError="";
 	$salaryError="";
+	$dateError ="";
 
 	if(!empty($_POST['workernumber'])){
 		if($_POST['workernumber'] < 0){
@@ -53,15 +52,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
 
 	if($workernumberError =="" && $salaryError =="" && $dateError == ""){
-		$newJob = "INSERT INTO `joblist` (`jobID`, `jobtitle`, `startdate`, `enddate`, `jobdescription`, `startime`, `endtime`,`salary`, `contactinfo`, `status`,`maxWorker`,`employer`, `workers`) VALUES ('$jobID', '$jobtitle', '$date', '$date2' ,'$jobdescription', '$startime', '$endtime', '$salary', '$contactinfo', 'Available', '$workernumber' ,'$fullname', '0')";
+		$newJob = "UPDATE `joblist` SET `jobtitle` = '$jobtitle', `startdate` = '$date' , `enddate` = '$date2' , `jobdescription` = '$jobdescription', `startime` = '$startime' , `endtime` = '$endtime' , `salary` = '$salary' , `contactinfo` = '$contactinfo', `maxWorker` = '$workernumber' WHERE `jobID` = '$id' ";
 		if (mysqli_query($con, $newJob)){
 			echo '<script language="javascript">';
-			echo 'alert("Job successfully created")';
+			echo 'alert("Job successfully created");';
+			echo 'window.location.href="jobhistory_client.php";';
 			echo '</script>';
 			}
 		}
     }
-
+$id=$_GET['id'];
+$aa= "SELECT * FROM joblist WHERE jobID = $id ";
+$bb = mysqli_query($con, $aa);
+$row = mysqli_fetch_array($bb);
 ?>
 
 <!DOCTYPE html>
@@ -166,43 +169,43 @@ $(document).ready(function () {
 
 <div class="memberform">
 	
-	<form action="newjob.php" method="POST" class="registerform">
-		<h2>New Job Form</h2>
+	<form action="editjob.php?jobID=<?php echo $id; ?>" method="POST" class="registerform">
+		<h3>Editing Job for Job ID: <?php echo $id; ?></h3>
 		<div class="formelement">
 			<label for="jobtitle">Job Title:</label>
-			<input type="text" id="jobtitle" name="jobtitle" style="height:30px; "value="" placeholder="" required />
+			<input type="text" id="jobtitle" name="jobtitle" style="height:30px;" value="" placeholder="<?php echo $row['jobtitle']; ?>" required />
 		</div>
 		<div class="formelement">
-			<label for="jobdate">Job Date:</label>
+			<label for="jobdate">Job Date: Currently <?php echo $row['startdate']; ?> to <?php echo $row['enddate']; ?> </label>
 			<input type="date" id="startdate" name="startdate" style="width:150px; height:30px;" value="" required/>
 			to
 			<input type="date" id="enddate" name="enddate" style="width:150px; height:30px;" value="" required/><p>
 			<?php if(isset($dateError)){echo $dateError;} ?>
 		</div>
 		<div class="formelement">
-			<label for="jobtime">Job Time:</label>
+			<label for="jobtime">Job Time: Currently <?php echo $row['startime']; ?> to <?php echo $row['endtime']; ?></label>
 			<input type="time" id="startime" name="startime" style="width:100px; height:30px;" value="" required/>
 			to
 			<input type="time" id="endtime" name="endtime" style="width:100px; height:30px;" value="" required/>
 		</div>
 		<div class="formelement">
 			<label for="jobdescription">Job Description</label>
-			<textarea rows="5" cols="50" id="jobdescription" style="height:30px;" name="jobdescription" value="" placeholder="" required> </textarea>
+			<textarea rows="5" cols="50" id="jobdescription" style="height:30px;" name="jobdescription" value="" placeholder="<?php echo $row['jobdescription']; ?>" required></textarea>
 		</div>
 		<div class="formelement">
 			<label for="Number of Workers">Number of Workers:</label>
-			<input type="number" min="1" id="workernumber" style="height:30px;" name="workernumber" value="" placeholder="" required />
+			<input type="number" min="1" id="workernumber" style="height:30px;" name="workernumber" value="" placeholder="<?php echo $row['maxWorker']; ?>" required />
 		</div>
 		<div class="formelement">
 			<label for="Salary">Salary (RM per hour):</label>
-			<input type="number" min="1" id="salary" name="salary" style="height:30px;" value="" placeholder="" required />
+			<input type="number" min="1" id="salary" name="salary" style="height:30px;" value="" placeholder="<?php echo $row['salary']; ?>" required />
 		</div>
 		<div class="formelement">
 			<label for="contactinfo">Contact Information:</label>
-			<input type="text" id="contactinfo" name="contactinfo" value="" style="height:30px;" placeholder="" required />
+			<input type="text" id="contactinfo" name="contactinfo" value="" style="height:30px;" placeholder="<?php echo $row['contactinfo']; ?>" required />
 		</div>
 		<div class="formelement">
-		<input type="submit" class="button" value="Create New Job" />
+		<input type="submit" class="button" value="Update Job" />
 		</div>
 		<div class="clear"></div>
 	</form>
@@ -259,7 +262,7 @@ $(document).ready(function () {
 
           <div class="footer-right">
 
-<<<<<<< HEAD
+
             <p class="footer-company-about">
               <span>About the company</span>
                AGN strives to better the lives of the people within Jinjang Utara Community
