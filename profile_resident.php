@@ -1,16 +1,16 @@
-<?php 
+<?php
  include ("connection.php");
- $usernameError="Enter your username"; 
+ $usernameError="Enter your username";
  $passwordError="Enter your Password";
- $username=$_SESSION['username']; 
+ $username=$_SESSION['username'];
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $confirmPassword = $_POST['confirm_password'];
     $password = $_POST['password'];
 
 
-    $emailError=""; 
-    $passwordError=""; 
+    $emailError="";
+    $passwordError="";
 
 
     $findResident = "SELECT `email` FROM `resident` WHERE `email` = '".$_POST['email']."'";
@@ -19,11 +19,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $findnonresidentEmail = mysqli_query($con, $findnonresident);
     if(mysqli_num_rows($findResidentEmail) > 0 || mysqli_num_rows($findnonresidentEmail) > 0){
       $emailError = "Someone have used this email already";
-    }   
+    }
     else {
     $email = $_POST['email'];
     }
-      
+
     if($confirmPassword != $password){
       $passwordError = "Both password must be same";
     }
@@ -31,19 +31,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($passwordError == "" && $emailError == "" ){
       if
     (mysqli_query($con, "UPDATE `resident` SET `password` = '$password', `email` = '$email' WHERE `username` = '".$username."'")){
-       
+
         echo '<script language="javascript">';
         echo 'alert("Profile has been updated.")';
-        echo '</script>'; 
-        }     
+        echo '</script>';
+        }
     }
     echo '<script language="javascript">';
     echo '$emailError';
     echo 'window.location.href="profile_resident.php";';
     echo '</script>';
     }
-      
-  
+
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -137,7 +137,9 @@ $(document).ready(function () {
 </ul>
 </header>
 <br><br>
-
+<br><br>
+<br><br>
+<br>
 
 
 <div class="login-page">
@@ -146,7 +148,7 @@ $(document).ready(function () {
 
 <form name="loginform" method="post" action="profile_resident.php">
   <table>
-      
+
         <caption>Full Name:  <?php echo $_SESSION['fullname'];?></caption>
 
       <tr>

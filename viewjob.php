@@ -96,7 +96,6 @@ $(document).ready(function () {
 <li><a href="index_resident.php">Home</a></li>
 <li class="selected"><a href="viewjob.php">Apply Job</a></li>
 <li><a href="jobhistory_resident.php">Job History</a></li>
-<li><a href="contact_resident.php">Contact us</a></li>
 <li><a href="profile_resident.php">Profile</a></li>
 <li><a href="logout.php">Logout</a></li>
 </ul>

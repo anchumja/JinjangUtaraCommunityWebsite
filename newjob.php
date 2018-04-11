@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$dateError="Cannot be before start date !!";
 	} else {
 		$ddate2 = strtotime($_POST['enddate']);
-		$date2 = date('Y-m-d',$ddate2);}	
+		$date2 = date('Y-m-d',$ddate2);}
 
 	if(!empty($_POST['salary'])){
 		if($_POST['salary'] < 0){
@@ -147,25 +147,22 @@ $(document).ready(function () {
 <ul class="menubtns">
 <li ><a href="index_client.php">Home</a></li>
 <li class="selected"><a href="newjob.php">Post a Job</a></li>
-<li><a href="jobhistory_client.php">Jobs History</a></li>
-<li><a href="donate_client.php">Donate</a></li>
-<li><a href="contact_client.php">Contact us</a></li>
+<li><a href="jobhistory_client.php">Job History</a></li>
 <li><a href="profile_client.php">Profile</a></li>
 <li><a href="logout.php">Logout</a></li>
 </ul>
 </header>
 
-<br><br><br><br><br><br>
 
 
 <div class="container">
-	
+
 <br><br><br><br>
 
 <div class="page-width">
 
 <div class="memberform">
-	
+
 	<form action="newjob.php" method="POST" class="registerform">
 		<h2>New Job Form</h2>
 		<div class="formelement">
@@ -206,7 +203,7 @@ $(document).ready(function () {
 		</div>
 		<div class="clear"></div>
 	</form>
-	
+
 
 
 </div>

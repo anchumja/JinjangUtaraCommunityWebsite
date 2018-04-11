@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$dateError="Cannot be before start date !!";
 	} else {
 		$ddate2 = strtotime($_POST['enddate']);
-		$date2 = date('Y-m-d',$ddate2);}	
+		$date2 = date('Y-m-d',$ddate2);}
 
 	if(!empty($_POST['salary'])){
 		if($_POST['salary'] < 0){
@@ -158,17 +158,16 @@ $(document).ready(function () {
 </ul>
 </header>
 
-<br><br><br><br><br><br>
+<br><br><br><br>
 
 
 <div class="container">
-	
-<br><br><br><br>
+
 
 <div class="page-width">
 
 <div class="memberform">
-	
+
 	<form action="editjob.php?jobID=<?php echo $id; ?>" method="POST" class="registerform">
 		<h3>Editing Job for Job ID: <?php echo $id; ?></h3>
 		<div class="formelement">
@@ -209,7 +208,7 @@ $(document).ready(function () {
 		</div>
 		<div class="clear"></div>
 	</form>
-	
+
 
 
 </div>

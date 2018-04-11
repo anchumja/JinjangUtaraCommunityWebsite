@@ -1,7 +1,7 @@
-<?php 
+<?php
  include ("connection.php");
- $usernameError="Enter your username"; 
- $passwordError="Enter your Password"; 
+ $usernameError="Enter your username";
+ $passwordError="Enter your Password";
 
  $username=$_SESSION['username'];
 
@@ -10,8 +10,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $password = $_POST['password'];
 
 
-    $emailError=""; 
-    $passwordError=""; 
+    $emailError="";
+    $passwordError="";
 
 
     $findResident = "SELECT `email` FROM `resident` WHERE `email` = '".$_POST['email']."'";
@@ -20,11 +20,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $findnonresidentEmail = mysqli_query($con, $findnonresident);
     if(mysqli_num_rows($findResidentEmail) > 0 || mysqli_num_rows($findnonresidentEmail) > 0){
       $emailError = "Someone have used this email already";
-    }   
+    }
     else {
     $email = $_POST['email'];
     }
-      
+
     if($confirmPassword != $password){
       $passwordError = "Both password must be same";
     }
@@ -35,12 +35,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         {
         echo '<script language="javascript">';
         echo 'alert("Profile has been updated.")';
-        echo '</script>'; 
-        }     
+        echo '</script>';
+        }
     }
     }
-      
-  
+
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -126,16 +126,16 @@ $(document).ready(function () {
 
 <ul class="menubtns">
 <li><a href="index_client.php">Home</a></li>
-<li><a href="newjob.php">Create New Job</a></li>
+<li><a href="newjob.php">Post a Job</a></li>
 <li><a href="jobhistory_client.php">Job History</a></li>
-<li><a href="contact_client.php">Contact us</a></li>
 <li class="selected"><a href="profile_client.php">Profile</a></li>
 <li><a href="logout.php">Logout</a></li>
 </ul>
 </header>
 <br><br>
-
-
+<br><br>
+<br><br>
+<br>
 
 <div class="login-page">
 <div class="form">
@@ -143,7 +143,7 @@ $(document).ready(function () {
 
 <form name="loginform" method="post" action="profile_client.php">
   <table>
-      
+
         <caption>Full Name:  <?php echo $_SESSION['fullname'];?></caption>
 
       <tr>
@@ -165,7 +165,7 @@ $(document).ready(function () {
       </tr>
     </table>
     <?php if(isset($emailError)){echo $emailError;} ?>
-    
+
   </form>
   </div>
   </div> <!-- End Container -->

@@ -1,3 +1,11 @@
+<?php
+include("connection.php");
+//After you have checked that the username is correct.
+$username=$_SESSION['username'];
+
+
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,7 +20,6 @@
 <link rel="stylesheet" href="css/prettyPhoto.css" />
 <link rel="stylesheet" href="css/flexslider.css" />
 <link rel="stylesheet" href="css/custom-styles.css">
-
 
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -81,22 +88,13 @@ $(document).ready(function () {
 
 
 <ul class="menubtns">
-<li class="selected"><a href="index.php">Home</a></li>
-<li><a href="signup.php">Sign Up</a></li>
+<li class="selected" ><a href="index.php">Home</a></li>
 <li><a href="login.php">Log In</a></li>
-<li><a href="contact.php">Contact us</a></li>
+<li><a href="signup.php">Sign Up</a></li>
 </ul>
 </header>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-<body>
+<br><br><br>
+    <div class="container">
 
 
 
@@ -116,7 +114,7 @@ $(document).ready(function () {
         <!-- Headline Text
         ================================================== -->
         <div class="span4">
-        	<h3>Welcome to Jinjang Utara Community Website. <br />
+        	<h3>Welcome to Jinjang Utara Community Website<br />
           </h3>
             <p class="lead">Bringing Hope to Jinjang Utara.</p>
             <p>Jinjang, KL – 2 December – The children (and parents) of Jinjang Utara with great delight descended upon Padang Taman Aman Putra where a massive Christmas and Back-to-school party was organised especially for them. Anticipation filled the sunny blue sky, as the children knew their hosts would not disappoint, but supply above and beyond their expectations.</p>
