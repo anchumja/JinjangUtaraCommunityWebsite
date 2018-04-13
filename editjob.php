@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$newJob = "UPDATE `joblist` SET `jobtitle` = '$jobtitle', `startdate` = '$date' , `enddate` = '$date2' , `jobdescription` = '$jobdescription', `startime` = '$startime' , `endtime` = '$endtime' , `salary` = '$salary' , `contactinfo` = '$contactinfo', `maxWorker` = '$workernumber' WHERE `jobID` = '$id' ";
 		if (mysqli_query($con, $newJob)){
 			echo '<script language="javascript">';
-			echo 'alert("Job successfully created");';
+			echo 'alert("Job editted successfully.");';
 			echo 'window.location.href="jobhistory_client.php";';
 			echo '</script>';
 			}
