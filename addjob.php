@@ -21,14 +21,15 @@ $row2 = mysqli_fetch_array($dd);
 	$activeworker = $row2["workers"] + 1;
 	$maxworker = $row2["maxWorker"];
 
-$ee= "SELECT jobID FROM joinjob WHERE jobID = '$id' ";
+$ee= "SELECT jobID FROM joinjob WHERE jobID = '$id' and username = '$username' ";
 $ff = mysqli_query($con, $ee);
 
 	if (mysqli_num_rows($ff) > 0) { echo '<script language="javascript">';
 			echo 'alert("Already joined job.");';
 			echo 'window.location.href="viewjob.php";';
 			echo '</script>'; 
-			 }
+
+			}
 			else {
 			$joinSession = "INSERT INTO `joinjob` (`jobID`, `jobtitle`, `startdate`, `enddate`, `jobdescription`, `startime`, `endtime`, `salary` , `contactinfo`,`status`,`employer`, `username`) VALUES ('$jobid', '$jobtitle' ,'$startdate', '$enddate',  '$jobdescription' ,'$startime','$endtime','$salary', '$contactinfo', 'Joined', '$employer', '$username') ";
 				if (mysqli_query($con, $joinSession)) {
@@ -53,6 +54,9 @@ $ff = mysqli_query($con, $ee);
 							
 						}
 					}	
+				}else{
+
+					echo mysqli_error($con);
 				}
 			}
 			
